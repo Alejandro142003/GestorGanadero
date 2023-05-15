@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class LoginController extends App {
     @FXML
-    private Button btn_home;
+    private Button btn_login;
 
     @FXML
     private Label labelUser;
@@ -24,16 +24,16 @@ public class LoginController extends App {
     private PasswordField passField;
 
     @FXML
-    private void btnHomeValidate() throws IOException { //Controlador de usuario y contraseña
+    private void btnLoginValidate() throws IOException { //Controlador de usuario y contraseña
         if (userField.getText().equals("admin") && passField.getText().equals("admin")){
-            labelUser.setText("Correct user and password!");
+            labelUser.setText("¡Usuario y contraseñas correctos!");
             labelUser.setTextFill(Color.GREEN);
             App.setRoot("primary");
         }else {
             if (userField.getText().equals("user") && passField.getText().equals("user")){
                 App.setRoot("users");
             } else {
-                labelUser.setText("Wrong username or password!");
+                labelUser.setText("¡Usuario o contraseña invalidos!");
                 labelUser.setTextFill(Color.RED);
             }
         }
