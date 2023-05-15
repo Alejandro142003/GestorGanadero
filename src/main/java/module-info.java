@@ -1,4 +1,4 @@
-module org.example {
+module com.example.gestorganadero {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.xml.bind;
@@ -6,4 +6,6 @@ module org.example {
 
     opens com.example.gestorganadero to javafx.fxml;
     exports com.example.gestorganadero;
+    opens com.example.gestorganadero.controllers to javafx.fxml;
+    exports com.example.gestorganadero.controllers to javafx.fxml;
 }
