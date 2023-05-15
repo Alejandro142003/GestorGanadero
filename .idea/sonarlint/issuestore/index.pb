@@ -13,11 +13,17 @@ p
 @src/main/java/com/example/gestorganadero/domain/Veterinario.java,4\2\42163588410ea852c1876bcfbaf2cee0af28b018
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-y
-Isrc/main/java/com/example/gestorganadero/controllers/LoginController.java,a\1\a171ef0e7173148e037dc01731867895d9083c03
 x
 Hsrc/main/java/com/example/gestorganadero/connections/ConnectionData.java,2\e\2e81fcf855b3c49a0268a703734098a7251fa782
 y
 Isrc/main/java/com/example/gestorganadero/connections/ConnectionMySQL.java,e\0\e03bbaa9763f128a46d9431a33cd576257cd1084
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
+n
+>src/main/java/com/example/gestorganadero/domain/Ganaderia.java,1\1\11f6bfe239baa216dc3bbd14d9b1e9145e7f292a
+l
+<src/main/java/com/example/gestorganadero/domain/Persona.java,8\9\899ceab14a9c0dd3e24f1da2e6573e5012ad2482
+m
+=src/main/java/com/example/gestorganadero/domain/Ganadero.java,8\4\8456891893fc1e53224f3fad081e34692ab66321
+n
+>src/main/resources/com/example/gestorganadero/Styles/login.css,f\4\f47c4a8bb74660034e81d156490e540e1eb234fc
