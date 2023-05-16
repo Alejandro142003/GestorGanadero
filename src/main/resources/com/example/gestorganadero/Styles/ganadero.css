@@ -1,0 +1,49 @@
+#background{
+    -fx-background-image: url("../Images/Goat.jpg");
+    -fx-background-size: 1440 900;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+}
+#Panel{
+    -fx-background-radius: 10;
+    -fx-background-color: #c4c4c4;
+    -fx-opacity: 0.65;
+}
+#UserPane{
+    -fx-background-color: #fff;
+    -fx-background-radius: 10;
+}
+#IconoGanaderia{
+    -fx-background-image: url("../Images/IconoGranja.png");
+    -fx-background-size: 50 50;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+}
+#IconoVeterinaria {
+    -fx-background-image: url("../Images/IconoVeterinaria.png");
+    -fx-background-size: 50 50;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+}
+#IconoCorral{
+    -fx-background-image: url("../Images/IconoCorral.png");
+    -fx-background-size: 50 50;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+}
+#IconoAnimal{
+    -fx-background-image: url("../Images/IconoAnimal.png");
+    -fx-background-size: 50 50;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+}
+#IconoCalendario{
+    -fx-background-image: url("../Images/IconoCalendario.png");
+    -fx-background-size: 50 50;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+}
+#UserImage{
+    -fx-image: url("../Images/UserExampleImage.jpg");
+    -fx-cell-size: 50 50;
+}

@@ -29,3 +29,9 @@ n
 >src/main/resources/com/example/gestorganadero/Styles/login.css,f\4\f47c4a8bb74660034e81d156490e540e1eb234fc
 h
 8src/main/resources/com/example/gestorganadero/login.fxml,a\9\a941fb30cb042761ad9f79fd7a32de4ce2f47ccb
+a
+1src/main/java/com/example/gestorganadero/App.java,3\6\3694be0a3ef5337593929cd8a5c7a569d4029620
+r
+Bsrc/main/java/com/example/gestorganadero/controllers/Ganadero.java,1\a\1a861adf3f8b03d5600bc40d5fe418cc7d61fdd3
+o
+?src/main/java/com/example/gestorganadero/controllers/Login.java,8\d\8daec66d50d86bc49dbf3456de8678d994cf386e
