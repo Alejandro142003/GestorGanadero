@@ -27,3 +27,5 @@ m
 =src/main/java/com/example/gestorganadero/domain/Ganadero.java,8\4\8456891893fc1e53224f3fad081e34692ab66321
 n
 >src/main/resources/com/example/gestorganadero/Styles/login.css,f\4\f47c4a8bb74660034e81d156490e540e1eb234fc
+h
+8src/main/resources/com/example/gestorganadero/login.fxml,a\9\a941fb30cb042761ad9f79fd7a32de4ce2f47ccb

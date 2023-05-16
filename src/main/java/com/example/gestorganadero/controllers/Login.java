@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 
 import java.io.IOException;
 
-public class LoginController extends App {
+public class Login extends App {
     @FXML
     private Button btn_login;
 
@@ -28,7 +28,7 @@ public class LoginController extends App {
         if (userField.getText().equals("admin") && passField.getText().equals("admin")){
             labelUser.setText("¡Usuario y contraseñas correctos!");
             labelUser.setTextFill(Color.GREEN);
-            App.setRoot("primary");
+            App.setRoot("ganadero");
         }else {
             if (userField.getText().equals("user") && passField.getText().equals("user")){
                 App.setRoot("users");
