@@ -1,12 +1,17 @@
 package com.example.gestorganadero.domain;
 
+import java.nio.MappedByteBuffer;
 import java.util.Objects;
 
 public class Ganadero extends Persona{
     private int id;
     private String password;
 
-    public Ganadero(int id, String password) {
+    public Ganadero(String dni, String nomnbre, String apellidos, int telefono, int id, String password) {
+        super.dni = dni;
+        super.nombre = nomnbre;
+        super.apellidos = apellidos;
+        super.telefono = telefono;
         this.id = id;
         this.password = password;
     }
@@ -31,13 +36,14 @@ public class Ganadero extends Persona{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Ganadero ganadero = (Ganadero) o;
         return id == ganadero.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(super.hashCode(), id);
     }
 
     @Override
@@ -45,9 +51,10 @@ public class Ganadero extends Persona{
         return "Ganadero{" +
                 "id=" + id +
                 ", password='" + password + '\'' +
+                ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", Apellidos='" + Apellidos + '\'' +
+                ", telefono=" + telefono +
+                ", apellidos='" + apellidos + '\'' +
                 '}';
     }
 }

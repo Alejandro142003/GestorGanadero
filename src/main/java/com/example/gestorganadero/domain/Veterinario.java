@@ -47,7 +47,7 @@ public class Veterinario extends Persona{
                 ", password='" + password + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", Apellidos='" + Apellidos + '\'' +
+                ", Apellidos='" + apellidos + '\'' +
                 '}';
     }
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane id="background" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/ganadero.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.Ganadero">
    <children>
@@ -81,7 +82,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane id="UserPane" prefHeight="430.0" prefWidth="307.0" stylesheets="@Styles/ganadero.css">
+                  <Pane id="Calendario" prefHeight="427.0" prefWidth="307.0" stylesheets="@Styles/ganadero.css">
                      <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
                      </VBox.margin>
@@ -95,13 +96,37 @@
                         <Insets bottom="5.0" left="5.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView id="UserImage" fitHeight="130.0" fitWidth="130.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+                        <Pane id="UserImage" layoutX="14.0" layoutY="11.0" prefHeight="130.0" prefWidth="130.0" />
+                        <Label layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
+                           <font>
+                              <Font name="Lato Regular" size="40.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="182.0" layoutY="110.0" text="Editar" textFill="#0ac20a">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button id="Boton" layoutX="937.0" layoutY="108.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" text="Log Out" textFill="WHITE" />
                      </children>
                   </Pane>
                   <Pane id="UserPane" prefHeight="689.0" prefWidth="1074.0" stylesheets="@Styles/ganadero.css">
                      <VBox.margin>
                         <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
                      </VBox.margin>
+                     <children>
+                        <TableView layoutY="-2.0" prefHeight="689.0" prefWidth="1074.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children>
                   </Pane>
                </children>
             </VBox>

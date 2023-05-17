@@ -1,53 +1,84 @@
 package com.example.gestorganadero.domain;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Animal {
     private int Crotal;
-    private Animal madre;
-    private Animal padre;
+    private int madre;
+    private int padre;
     private float Lactancia;
     private String Vacuna;
     private int Edad;
     private int Hijos;
 
-    public Animal(int crotal, Animal madre, Animal padre, float lactancia, String vacuna, int edad, int hijos) {
-        Crotal = crotal;
+    private List<Animal> animales = null;
+
+    public Animal(int crotal, int madre, int padre, float lactancia, String vacuna, int edad, int hijos) {
+        this.Crotal = crotal;
         this.madre = madre;
         this.padre = padre;
-        Lactancia = lactancia;
-        Vacuna = vacuna;
-        Edad = edad;
-        Hijos = hijos;
+        this.Lactancia = lactancia;
+        this.Vacuna = vacuna;
+        this.Edad = edad;
+        this.Hijos = hijos;
     }
 
-    public int getCrotal() { return Crotal; }
+    public int getCrotal() {
+        return Crotal;
+    }
 
-    public void setCrotal(int crotal) { Crotal = crotal; }
+    public void setCrotal(int crotal) {
+        Crotal = crotal;
+    }
 
-    public Animal getMadre() { return madre; }
+    public int getMadre() {
+        return madre;
+    }
 
-    public void setMadre(Animal madre) { this.madre = madre; }
+    public void setMadre(int madre) {
+        this.madre = madre;
+    }
 
-    public Animal getPadre() { return padre; }
+    public int getPadre() {
+        return padre;
+    }
 
-    public void setPadre(Animal padre) { this.padre = padre; }
+    public void setPadre(int padre) {
+        this.padre = padre;
+    }
 
-    public float getLactancia() { return Lactancia; }
+    public float getLactancia() {
+        return Lactancia;
+    }
 
-    public void setLactancia(float lactancia) { Lactancia = lactancia; }
+    public void setLactancia(float lactancia) {
+        Lactancia = lactancia;
+    }
 
-    public String getVacuna() { return Vacuna; }
+    public String getVacuna() {
+        return Vacuna;
+    }
 
-    public void setVacuna(String vacuna) { Vacuna = vacuna; }
+    public void setVacuna(String vacuna) {
+        Vacuna = vacuna;
+    }
 
-    public int getEdad() { return Edad; }
+    public int getEdad() {
+        return Edad;
+    }
 
-    public void setEdad(int edad) { Edad = edad; }
+    public void setEdad(int edad) {
+        Edad = edad;
+    }
 
-    public int getHijos() { return Hijos; }
+    public int getHijos() {
+        return Hijos;
+    }
 
-    public void setHijos(int hijos) { Hijos = hijos; }
+    public void setHijos(int hijos) {
+        Hijos = hijos;
+    }
 
     @Override
     public boolean equals(Object o) {
