@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Ganaderia {
-    private int REGA;
-    private ArrayList<Corral> corrales = new ArrayList<>();
+    private String REGA;
     private int age;//Antigüedad
     private int CensoTotal;
     private String Siglas;
@@ -15,9 +14,8 @@ public class Ganaderia {
     private String Titular;
     private String SistemaExplotacion;
 
-    public Ganaderia(int REGA, ArrayList<Corral> corrales, int age, int censoTotal, String siglas, String nombre, String localidad, String provincia, String titular, String sistemaExplotacion) {
+    public Ganaderia(String REGA, int age, int censoTotal, String siglas, String nombre, String localidad, String provincia, String titular, String sistemaExplotacion) {
         this.REGA = REGA;
-        this.corrales = corrales;
         this.age = age;
         CensoTotal = censoTotal;
         Siglas = siglas;
@@ -28,20 +26,15 @@ public class Ganaderia {
         SistemaExplotacion = sistemaExplotacion;
     }
 
-    public int getREGA() {
+    public Ganaderia(){
+        this("",0,0,"","","","","","");
+    }
+    public String getREGA() {
         return REGA;
     }
 
-    public void setREGA(int REGA) {
+    public void setREGA(String REGA) {
         this.REGA = REGA;
-    }
-
-    public ArrayList<Corral> getCorrales() {
-        return corrales;
-    }
-
-    public void setCorrales(ArrayList<Corral> corrales) {
-        this.corrales = corrales;
     }
 
     public int getAge() {
@@ -125,7 +118,6 @@ public class Ganaderia {
     public String toString() {
         return "Ganaderia{" +
                 "REGA=" + REGA +
-                ", corrales=" + corrales +
                 ", age=" + age +
                 ", CensoTotal=" + CensoTotal +
                 ", Siglas='" + Siglas + '\'' +

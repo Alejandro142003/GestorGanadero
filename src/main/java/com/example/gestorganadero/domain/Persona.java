@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Persona {
     protected String dni;
     protected String nombre;
-    protected int telefono;
+    protected Integer telefono;
     protected String apellidos;
 
     public String getDni() {
@@ -16,7 +16,7 @@ public class Persona {
         return nombre;
     }
 
-    public int getTelefono() {
+    public Integer getTelefono() {
         return telefono;
     }
 

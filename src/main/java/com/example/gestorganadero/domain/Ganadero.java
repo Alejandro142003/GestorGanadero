@@ -1,27 +1,39 @@
 package com.example.gestorganadero.domain;
 
-import java.nio.MappedByteBuffer;
 import java.util.Objects;
 
 public class Ganadero extends Persona{
-    private int id;
+    private int idGanadero;
     private String password;
+    private String REGA;
 
-    public Ganadero(String dni, String nomnbre, String apellidos, int telefono, int id, String password) {
+    public Ganadero(String dni, String nombre, String apellidos, int telefono, int idGanadero, String password) {
         super.dni = dni;
-        super.nombre = nomnbre;
+        super.nombre = nombre;
         super.apellidos = apellidos;
         super.telefono = telefono;
-        this.id = id;
+        this.idGanadero = idGanadero;
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public Ganadero() {
+        this("","","",0,0,"");
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getREGA() {
+        return REGA;
+    }
+
+    public void setREGA(String REGA) {
+        this.REGA = REGA;
+    }
+
+    public int getIdGanadero() {
+        return idGanadero;
+    }
+
+    public void setIdGanadero(int idGanadero) {
+        this.idGanadero = idGanadero;
     }
 
     public String getPassword() {
@@ -38,19 +50,20 @@ public class Ganadero extends Persona{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Ganadero ganadero = (Ganadero) o;
-        return id == ganadero.id;
+        return idGanadero == ganadero.idGanadero && Objects.equals(REGA, ganadero.REGA);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id);
+        return Objects.hash(super.hashCode(), idGanadero, REGA);
     }
 
     @Override
     public String toString() {
         return "Ganadero{" +
-                "id=" + id +
+                "idGanadero=" + idGanadero +
                 ", password='" + password + '\'' +
+                ", REGA='" + REGA + '\'' +
                 ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", telefono=" + telefono +

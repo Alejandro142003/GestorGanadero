@@ -11,10 +11,10 @@ public class Animal {
     private String Vacuna;
     private int Edad;
     private int Hijos;
+    private String Sexo;
+    private int IdCorral;
 
-    private List<Animal> animales = null;
-
-    public Animal(int crotal, int madre, int padre, float lactancia, String vacuna, int edad, int hijos) {
+    public Animal(int crotal, int madre, int padre, float lactancia, String vacuna, int edad, int hijos,String sexo, int IdCorral) {
         this.Crotal = crotal;
         this.madre = madre;
         this.padre = padre;
@@ -22,6 +22,28 @@ public class Animal {
         this.Vacuna = vacuna;
         this.Edad = edad;
         this.Hijos = hijos;
+        this.Sexo = sexo;
+        this.IdCorral = IdCorral;
+    }
+
+    public Animal(){
+        this(0,0,0,0,"",0,0,"",0);
+    }
+
+    public void setIdCorral(int idCorral) {
+        IdCorral = idCorral;
+    }
+
+    public String getSexo() {
+        return Sexo;
+    }
+
+    public void setSexo(String sexo) {
+        Sexo = sexo;
+    }
+
+    public int getIdCorral() {
+        return IdCorral;
     }
 
     public int getCrotal() {
@@ -103,6 +125,8 @@ public class Animal {
                 ", Vacuna='" + Vacuna + '\'' +
                 ", Edad=" + Edad +
                 ", Hijos=" + Hijos +
+                ", Sexo='" + Sexo + '\'' +
+                ", IdCorral=" + IdCorral +
                 '}';
     }
 }

@@ -1,0 +1,18 @@
+#background{
+    -fx-background-image: url("../Images/BabyGoatEdit.jpg");
+    -fx-background-size: 1440 900;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center;
+}
+#Panel{
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+#Boton{
+    -fx-background-color: #0BDA0B;
+    -fx-background-radius: 10;
+}
+#Formulario{
+    -fx-background-color: #fff;
+    -fx-background-radius: 10;
+}
