@@ -1,19 +1,0 @@
-
-Š
-java:S1319"hThe type of "corrales" should be an interface such as "List" rather than the implementation "ArrayList".(¦¬Âºùÿÿÿÿ8…ˆÜº€1
-
-java:S1319'"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".( ˆË8†ˆÜº€1
-Š
-java:S1319+"hThe type of "corrales" should be an interface such as "List" rather than the implementation "ArrayList".(Ê–şÔşÿÿÿÿ8†ˆÜº€1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¬Âºùÿÿÿÿ8‡ˆÜº€1
-m	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ì¼×8‡ˆÜº€1
-k	java:S116"ORename this field "REGA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œÁñÄ8“ˆÜº€1
-v	java:S116
-"URename this field "CensoTotal" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–°¸™úÿÿÿÿ8“ˆÜº€1
-m	java:S116"QRename this field "Siglas" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ Ğ÷8“ˆÜº€1
-r	java:S116"QRename this field "Nombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş¾Îüÿÿÿÿ8”ˆÜº€1
-u	java:S116"TRename this field "Localidad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓØ±Üıÿÿÿÿ8”ˆÜº€1
-u	java:S116"TRename this field "Provincia" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û±ì½şÿÿÿÿ8”ˆÜº€1
-s	java:S116"RRename this field "Titular" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ôµşÿÿÿÿ8”ˆÜº€1
-~	java:S116"]Rename this field "SistemaExplotacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ©ÔĞÿÿÿÿÿ8”ˆÜº€1
-c	java:S107"BConstructor has 10 parameters, which is greater than 7 authorized.(¦¬Âºùÿÿÿÿ8—ˆÜº€1

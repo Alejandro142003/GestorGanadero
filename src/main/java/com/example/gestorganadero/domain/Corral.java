@@ -3,27 +3,43 @@ package com.example.gestorganadero.domain;
 import java.util.Objects;
 
 public class Corral {
-    private int id;
+    private int idCorral;
     private String nombre;
     private String tipo;
 
     /*Habría que cambiar el metodo numeroAnimales por un count dentro de animales asociados a cada corral
     * para que saque el número de animales total por corral*/
-    private int numeroAnimales;
+    private int censo;
 
-    public Corral(int id, String nombre, String tipo, int numeroAnimales) {
-        this.id = id;
+    private String REGA;
+
+    public Corral(int id, String nombre, String tipo, int numeroAnimales, String REGA) {
+        this.idCorral = id;
         this.nombre = nombre;
         this.tipo = tipo;
-        this.numeroAnimales = numeroAnimales;
+        this.censo = numeroAnimales;
+        this.REGA = REGA;
     }
 
-    public int getId() {
-        return id;
+
+    public String getREGA() {
+        return REGA;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setREGA(String REGA) {
+        this.REGA = REGA;
+    }
+
+    public Corral(){
+        this(0,"","",0,"");
+    }
+
+    public int getIdCorral() {
+        return idCorral;
+    }
+
+    public void setIdCorral(int idCorral) {
+        this.idCorral = idCorral;
     }
 
     public String getNombre() {
@@ -42,12 +58,12 @@ public class Corral {
         this.tipo = tipo;
     }
 
-    public int getNumeroAnimales() {
-        return numeroAnimales;
+    public int getCenso() {
+        return censo;
     }
 
-    public void setNumeroAnimales(int numeroAnimales) {
-        this.numeroAnimales = numeroAnimales;
+    public void setCenso(int censo) {
+        this.censo = censo;
     }
 
     @Override
@@ -55,21 +71,22 @@ public class Corral {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Corral corral = (Corral) o;
-        return id == corral.id;
+        return idCorral == corral.idCorral;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(idCorral);
     }
 
     @Override
     public String toString() {
         return "Corral{" +
-                "id=" + id +
+                "idCorral=" + idCorral +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
-                ", numeroAnimales=" + numeroAnimales +
+                ", censo=" + censo +
+                ", rega='" + REGA + '\'' +
                 '}';
     }
 }
