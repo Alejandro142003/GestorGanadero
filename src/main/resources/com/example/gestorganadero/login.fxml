@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -83,13 +84,16 @@
                               <DropShadow color="gray" offsetX="0" offsetY="0" />
                            </effect>
                         </PasswordField>
-                        <Button id="Boton" fx:id="btn_logn" alignment="CENTER" mnemonicParsing="false" onAction="#btnLoginValidate" prefHeight="54.0" prefWidth="301.0" text="Iniciar sesión" textFill="WHITE">
+                        <Button id="Boton" fx:id="btn_login" alignment="CENTER" mnemonicParsing="false" onAction="#btnLoginValidate" prefHeight="54.0" prefWidth="301.0" text="Iniciar sesión" textFill="WHITE">
                            <VBox.margin>
                               <Insets left="53.0" right="52.0" top="20.0" />
                            </VBox.margin>
                            <font>
                               <Font name="Lato Regular" size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                         <Label alignment="TOP_RIGHT" prefHeight="17.0" prefWidth="441.0" text="¿Contraseña olvidada?" textFill="#0ac20a">
                            <VBox.margin>

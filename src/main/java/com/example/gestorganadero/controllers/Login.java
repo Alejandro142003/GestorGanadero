@@ -28,10 +28,10 @@ public class Login extends App {
         if (userField.getText().equals("admin") && passField.getText().equals("admin")){
             labelUser.setText("¡Usuario y contraseñas correctos!");
             labelUser.setTextFill(Color.GREEN);
-            App.setRoot("ganadero");
+            App.setRoot("ganaderia");
         }else {
             if (userField.getText().equals("user") && passField.getText().equals("user")){
-                App.setRoot("users");
+                App.setRoot("veterinaria");
             } else {
                 labelUser.setText("¡Usuario o contraseña invalidos!");
                 labelUser.setTextFill(Color.RED);

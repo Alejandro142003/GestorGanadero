@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.gestorganadero.connections.ConnectionMySQL;
-import com.example.gestorganadero.domain.Ganadero;
 
 public class AnimalDAO implements DAO<Animal> {
     private final static String FINDALL ="SELECT * from animal";

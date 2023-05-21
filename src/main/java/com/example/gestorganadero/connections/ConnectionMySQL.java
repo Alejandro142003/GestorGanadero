@@ -15,15 +15,15 @@ public class ConnectionMySQL {
 
     private static ConnectionMySQL _newInstance;
 
-    private static Connection con;
+    private static Connection conn;
 
     private ConnectionMySQL() {
         ConnectionData dc = loadXML();
 
         try{
-            con = DriverManager.getConnection(dc.getServer() + "/" + dc.getDatabase(), dc.getUsername(), dc.getPassword());
+            conn = DriverManager.getConnection(dc.getServer() + "/" + dc.getDatabase(), dc.getUsername(), dc.getPassword());
         }catch (SQLException e){
-            con = null;
+            conn = null;
             e.printStackTrace();
         }
     }
@@ -32,11 +32,11 @@ public class ConnectionMySQL {
         if (_newInstance == null) {
             _newInstance = new ConnectionMySQL();
         }
-        return con;
+        return conn;
     }
 
     /**
-     * Metodo para los datso de la conexion
+     * Metodo para los datos de la conexion
      * @return objeto CoonnectionData con los datos leidos
      */
     public ConnectionData loadXML() {
