@@ -1,8 +1,11 @@
 package com.example.gestorganadero.controllers;
 
 import com.example.gestorganadero.App;
-import com.example.gestorganadero.connections.ConnectionMySQL;
 import com.example.gestorganadero.dao.AnimalDAO;
+import com.example.gestorganadero.dao.GanaderiaDAO;
+import com.example.gestorganadero.dao.GanaderoDAO;
+import com.example.gestorganadero.domain.Ganaderia;
+import com.example.gestorganadero.domain.Ganadero;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -29,9 +32,12 @@ public class Animal extends App implements Initializable {
     private Button btn_logout;
     @FXML
     private Label link_editar;
-
     @FXML
-    private TableView<Animal> tbAnimal;
+    private Label username;
+    @FXML
+    private Label asociacion;
+    @FXML
+    private TableView<com.example.gestorganadero.domain.Animal> tbAnimal;
 
     @FXML
     private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCrotal;
@@ -49,10 +55,10 @@ public class Animal extends App implements Initializable {
     private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colNumeroHijos;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colMadre;
+    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCrotalMadre;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colPadre;
+    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCrotalPadre;
 
     @FXML
     private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colSexo;
@@ -61,45 +67,72 @@ public class Animal extends App implements Initializable {
     private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCorral;
 
     private AnimalDAO adao;
+    private GanaderoDAO gdao;
+    private GanaderiaDAO ganaderiadao;
+
+    private ObservableList<com.example.gestorganadero.domain.Animal> listaAnimales;
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Lógica de inicialización del controlador
-        Connection conn = ConnectionMySQL.getConnect();
-        adao = new AnimalDAO(conn);
-        // Obtener la lista de animales desde el AnimalDAO
+        adao = new AnimalDAO();
+        gdao = new GanaderoDAO();
+        ganaderiadao = new GanaderiaDAO();
+        String ganaderoId = "1";
+        String ganaderiaId = "410600000054";
+
+        // Obtener el ganadero
+        Ganadero ganadero;
         try {
-            List<com.example.gestorganadero.domain.Animal> animales = adao.findAll();
+            ganadero = gdao.findById(ganaderoId);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
+        // Obtener la ganaderia
+        Ganaderia ganaderia;
+        try{
+            ganaderia = ganaderiadao.findById(ganaderiaId);
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
+        // Establecer nombre y usuarios en el label
+        username.setText(ganadero.getNombre() + " " + ganadero.getApellidos());
+
+        // Establecer nombre y siglas en el label
+        asociacion.setText(ganaderia.getNombre() + " " + ganaderia.getSiglas());
+
         // Crear una ObservableList a partir de la lista de animales
-        ObservableList<Animal> listaAnimales = FXCollections.observableArrayList();
+        listaAnimales = FXCollections.observableArrayList();
 
         // Configurar la tabla y sus columnas
-        colCrotal.setCellValueFactory(new PropertyValueFactory<>("crotal"));
-        colLactancia.setCellValueFactory(new PropertyValueFactory<>("lactancia"));
-        colVacuna.setCellValueFactory(new PropertyValueFactory<>("vacuna"));
-        colEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
-        colNumeroHijos.setCellValueFactory(new PropertyValueFactory<>("numHijos"));
-        colSexo.setCellValueFactory(new PropertyValueFactory<>("sexo"));
-        colMadre.setCellValueFactory(new PropertyValueFactory<>("madre"));
-        colPadre.setCellValueFactory(new PropertyValueFactory<>("padre"));
-        colCorral.setCellValueFactory(new PropertyValueFactory<>("corral"));
+        colCrotal.setCellValueFactory(new PropertyValueFactory<>("Crotal"));
+        colLactancia.setCellValueFactory(new PropertyValueFactory<>("Lactancia"));
+        colVacuna.setCellValueFactory(new PropertyValueFactory<>("Vacuna"));
+        colEdad.setCellValueFactory(new PropertyValueFactory<>("Edad"));
+        colNumeroHijos.setCellValueFactory(new PropertyValueFactory<>("NumeroHijos"));
+        colSexo.setCellValueFactory(new PropertyValueFactory<>("Sexo"));
+        colCrotalMadre.setCellValueFactory(new PropertyValueFactory<>("CrotalMadre"));
+        colCrotalPadre.setCellValueFactory(new PropertyValueFactory<>("CrotalPadre"));
+        colCorral.setCellValueFactory(new PropertyValueFactory<>("IdCorral"));
 
         // Asignar la lista de animales a la tabla
+        List<com.example.gestorganadero.domain.Animal> aux = null;
+        try {
+            aux = adao.findAll();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        listaAnimales.setAll(aux);
         tbAnimal.setItems(listaAnimales);
 
         // Configurar el evento de selección de la tabla
         tbAnimal.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 // Actualizar la vista de detalles con los datos del animal seleccionado
-                Animal animalSeleccionado = tbAnimal.getSelectionModel().getSelectedItem();
-                // Lógica para mostrar los detalles del animal seleccionado en la vista correspondiente
+                com.example.gestorganadero.domain.Animal animalSeleccionado = tbAnimal.getSelectionModel().getSelectedItem();
             }
         });
-
-        // Otros pasos de inicialización que puedas necesitar
     }
 
     @FXML

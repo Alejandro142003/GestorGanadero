@@ -53,6 +53,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
             pst.setString(1, id);
             try(ResultSet res = pst.executeQuery()){
                 if(res.next()) {
+                    result = new Ganadero();
                     result.setIdGanadero(res.getInt("IdGanadero"));
                     result.setDni(res.getString("Dni"));
                     result.setNombre(res.getString("Nombre"));

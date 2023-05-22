@@ -114,12 +114,12 @@
                      </VBox.margin>
                      <children>
                         <Pane id="UserImage" layoutX="14.0" layoutY="11.0" prefHeight="130.0" prefWidth="130.0" />
-                        <Label layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
+                        <Label fx:id="username" layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
                            <font>
                               <Font name="Lato Regular" size="40.0" />
                            </font>
                         </Label>
-                        <Label layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
+                        <Label fx:id="asociacion" layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
                            <font>
                               <Font size="23.0" />
                            </font>
@@ -151,8 +151,8 @@
                               <TableColumn fx:id="colLactancia" prefWidth="78.4000244140625" text="Lactancia" />
                               <TableColumn fx:id="colNumeroHijos" prefWidth="105.5999755859375" text="Numero de hijos" />
                               <TableColumn fx:id="colSexo" minWidth="0.0" prefWidth="50.4000244140625" text="Sexo" />
-                              <TableColumn fx:id="colMadre" minWidth="0.0" prefWidth="132.0" text="Madre" />
-                              <TableColumn fx:id="colPadre" minWidth="0.0" prefWidth="135.199951171875" text="Padre" />
+                              <TableColumn fx:id="colCrotalMadre" minWidth="0.0" prefWidth="132.0" text="CrotalMadre" />
+                              <TableColumn fx:id="colCrotalPadre" minWidth="0.0" prefWidth="135.199951171875" text="CrotalPadre" />
                               <TableColumn fx:id="colCorral" minWidth="0.0" prefWidth="192.79998779296875" text="Corral" />
                           </columns>
                         </TableView>

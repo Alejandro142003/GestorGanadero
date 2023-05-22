@@ -16,7 +16,7 @@ public class AnimalDAO implements DAO<Animal> {
     private final static String FINBYID ="SELECT * from animal WHERE crotal=?";
     private final static String INSERT ="INSERT INTO animal (Crotal,CrotalMadre,CrotalPadre,Lactancia,Vacuna,Edad,NumeroHijos,Sexo,IdCorral) VALUES (?,?,?,?,?,?,?,?,?)";
     private final static String UPDATE ="UPDATE animal SET Lactancia=?, Vacuna=?, Edad=?, NumeroHijos=?,IdCorral=? WHERE Crotal=?";
-    private final static String DELETE = "DELETE FROM ganadero WHERE crotal=?";
+    private final static String DELETE = "DELETE FROM ganaderoA WHERE crotal=?";
 
     private Connection conn;
     public AnimalDAO(Connection conn){
@@ -37,8 +37,8 @@ public class AnimalDAO implements DAO<Animal> {
                     a.setEdad(res.getInt("Edad"));
                     a.setHijos(res.getInt("NumeroHijos"));
                     a.setLactancia(res.getFloat("Lactancia"));
-                    a.setMadre(res.getInt("Madre"));
-                    a.setPadre(res.getInt("Padre"));
+                    a.setMadre(res.getInt("CrotalMadre"));
+                    a.setPadre(res.getInt("CrotalPadre"));
                     a.setVacuna(res.getString("Vacuna"));
                     a.setSexo(res.getString("Sexo"));
                     a.setIdCorral(res.getInt("IdCorral"));

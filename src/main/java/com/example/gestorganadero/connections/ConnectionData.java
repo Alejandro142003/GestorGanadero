@@ -6,6 +6,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Clase que contiene los datos de la conexión a nuestra base de datos.
+ */
 @XmlRootElement(name = "conexión")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ConnectionData implements Serializable{
@@ -21,9 +24,9 @@ public class ConnectionData implements Serializable{
     private  String password;
 
     public ConnectionData() {
-        this.server = "";
-        this.database = "";
-        this.username = "";
+        this.server = "jdbc:mysql://localhost:3306";
+        this.database = "ganaderias";
+        this.username = "root";
         this.password = "";
     }
 

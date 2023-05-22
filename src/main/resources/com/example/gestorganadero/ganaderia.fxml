@@ -113,12 +113,12 @@
                      </VBox.margin>
                      <children>
                         <Pane id="UserImage" layoutX="14.0" layoutY="11.0" prefHeight="130.0" prefWidth="130.0" />
-                        <Label layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
+                        <Label fx:id="username" layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
                            <font>
                               <Font name="Lato Regular" size="40.0" />
                            </font>
                         </Label>
-                        <Label layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
+                        <Label fx:id="asociacion" layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
                            <font>
                               <Font size="23.0" />
                            </font>

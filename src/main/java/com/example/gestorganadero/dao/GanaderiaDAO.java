@@ -54,6 +54,7 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
             pst.setString(1, id);
             try(ResultSet res = pst.executeQuery()){
                 if(res.next()) {
+                    result = new Ganaderia();
                     result.setREGA(res.getString("REGA"));
                     result.setNombre(res.getString("Nombre"));
                     result.setSiglas(res.getString("Siglas"));

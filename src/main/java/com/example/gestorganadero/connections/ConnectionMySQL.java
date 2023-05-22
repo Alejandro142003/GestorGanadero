@@ -17,7 +17,7 @@ public class ConnectionMySQL {
 
     private static Connection conn;
 
-    private ConnectionMySQL() {
+    public ConnectionMySQL() {
         ConnectionData dc = loadXML();
 
         try{

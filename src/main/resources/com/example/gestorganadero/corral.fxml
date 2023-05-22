@@ -31,6 +31,9 @@
                            </font>
                         </Label>
                      </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
                   <Pane id="UserPane" prefHeight="70.0" prefWidth="1061.0" stylesheets="@Styles/ganadero.css">
                      <VBox.margin>
@@ -111,12 +114,12 @@
                      </VBox.margin>
                      <children>
                         <Pane id="UserImage" layoutX="14.0" layoutY="11.0" prefHeight="130.0" prefWidth="130.0" />
-                        <Label layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
+                        <Label fx:id="username" layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
                            <font>
                               <Font name="Lato Regular" size="40.0" />
                            </font>
                         </Label>
-                        <Label layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
+                        <Label fx:id="asociacion" layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
                            <font>
                               <Font size="23.0" />
                            </font>
@@ -129,7 +132,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Label>
-                        <Button id="Boton" fx:id="btn_logout" layoutX="937.0" layoutY="108.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="30.0" prefWidth="123.0" text="Log Out" textFill="WHITE">
+                        <Button id="Boton" fx:id="btn_logout" layoutX="937.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#btnLogout" prefHeight="30.0" prefWidth="123.0" text="Log Out" textFill="WHITE">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
@@ -140,17 +143,13 @@
                         <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
-                        <TableView layoutY="39.0" prefHeight="648.0" prefWidth="1074.0">
+                        <TableView fx:id="tbCorral" layoutY="39.0" prefHeight="648.0" prefWidth="1074.0">
                           <columns>
-                            <TableColumn prefWidth="153.60003358125687" text="Crotal" />
-                            <TableColumn prefWidth="53.5999755859375" text="Edad" />
-                              <TableColumn prefWidth="174.40003967285156" text="Vacuna" />
-                              <TableColumn prefWidth="78.4000244140625" text="Lactancia" />
-                              <TableColumn prefWidth="105.5999755859375" text="Numero de hijos" />
-                              <TableColumn minWidth="0.0" prefWidth="50.4000244140625" text="Sexo" />
-                              <TableColumn minWidth="0.0" prefWidth="132.0" text="Madre" />
-                              <TableColumn minWidth="0.0" prefWidth="135.199951171875" text="Padre" />
-                              <TableColumn minWidth="0.0" prefWidth="192.79998779296875" text="Corral" />
+                            <TableColumn fx:id="colIdCorral" text="IdCorral" />
+                            <TableColumn fx:id="colNombre" prefWidth="327.0" text="Nombre" />
+                              <TableColumn fx:id="colTipo" prefWidth="289.0" text="Tipo" />
+                              <TableColumn fx:id="colCenso" minWidth="0.0" prefWidth="84.0" text="Censo" />
+                              <TableColumn fx:id="colREGA" prefWidth="293.0" text="REGA" />
                           </columns>
                         </TableView>
                         <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="1074.0">
@@ -178,6 +177,11 @@
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="23.0" prefWidth="846.0" text="Corrales" textFill="#0ac20a">
+                                 <font>
+                                    <Font name="Lato Regular" size="18.0" />
+                                 </font>
                               </Label>
                            </children>
                         </HBox>
