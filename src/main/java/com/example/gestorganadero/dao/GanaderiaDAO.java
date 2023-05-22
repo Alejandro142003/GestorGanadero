@@ -2,8 +2,6 @@ package com.example.gestorganadero.dao;
 
 import com.example.gestorganadero.connections.ConnectionMySQL;
 import com.example.gestorganadero.domain.Ganaderia;
-import com.example.gestorganadero.domain.Ganadero;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,12 +9,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase GanaderiaDAO que implementa DAO que contiene todas las consultas a la tabla
+ * ganaderia de la base de datos.
+ */
 public class GanaderiaDAO implements DAO<Ganaderia>{
 
     private final static String FINDALL ="SELECT * from ganaderia";
     private final static String FINBYID ="SELECT * from ganaderia WHERE REGA=?";
     private final static String INSERT ="INSERT INTO ganaderia (REGA,Nombre,Siglas,Localidad,Provincia,Titular,CensoTotal,SistemaExplotacion,Age) VALUES (?,?,?,?,?,?,?,?,?)";
     private final static String UPDATE ="UPDATE ganaderia SET Nombre=?,Siglas=?,Localidad=?,Provincia=?,Titular=?,CensoTotal=?,SistemaExplotacion=?,Age=? WHERE REGA=?";
+    private final static String DELETE = "DELETE FROM ganaderoA WHERE crotal=?";
+
 
     private Connection conn;
     public GanaderiaDAO(Connection conn){
@@ -26,6 +30,11 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
         this.conn = ConnectionMySQL.getConnect();
     }
 
+    /**
+     * Metodo que obtiene todas las entradas de la tabla
+     * @return Todas las entras de la tabla
+     * @throws SQLException
+     */
     public List<Ganaderia> findAll() throws SQLException {
         List<Ganaderia> result = new ArrayList();
         try(PreparedStatement pst=this.conn.prepareStatement(FINDALL)){
@@ -48,6 +57,11 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
         return result;
     }
 
+    /**
+     * Metodo que obtiene un objeto de la tabla según su id
+     * @return Ganaderia buscada
+     * @throws SQLException
+     */
     public Ganaderia findById(String id) throws SQLException {
         Ganaderia result = null;
         try(PreparedStatement pst=this.conn.prepareStatement(FINBYID)){
@@ -70,6 +84,11 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
         return result;
     }
 
+    /**
+     * Metodo que agrega o modifica un objeto de la tabla
+     * @return Ganaderia agregada/modificada
+     * @throws SQLException
+     */
     public Ganaderia save(Ganaderia entity) throws SQLException {
         Ganaderia result = new Ganaderia();
         if (entity != null) {
@@ -107,9 +126,18 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
         return result;
     }
 
+    /**
+     * Metodo que elimina un objeto de la tabla según su id
+     * @throws SQLException
+     */
     @Override
     public void delete(Ganaderia entity) throws SQLException {
-
+        if (entity != null) {
+            try (PreparedStatement pst = this.conn.prepareStatement(DELETE)) {
+                pst.setString(1, entity.getREGA());
+                pst.executeUpdate();
+            }
+        }
     }
 
     @Override

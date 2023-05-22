@@ -10,6 +10,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase CorralDAO que implementa DAO que contiene todas las consultas a la tabla
+ * corral de la base de datos.
+ */
 public class CorralDAO implements DAO<Corral> {
     private final static String FINDALL ="SELECT * from corral";
     private final static String FINBYID ="SELECT * from corral WHERE IdCorral=?";
@@ -26,6 +30,12 @@ public class CorralDAO implements DAO<Corral> {
     public CorralDAO(){
         this.conn= ConnectionMySQL.getConnect();
     }
+
+    /**
+     * Metodo que obtiene todas las entradas de la tabla
+     * @return Todas las entras de la tabla
+     * @throws SQLException
+     */
     @Override
     public List<Corral> findAll() throws SQLException {
         List<Corral> result = new ArrayList();
@@ -45,6 +55,11 @@ public class CorralDAO implements DAO<Corral> {
         return result;
     }
 
+    /**
+     * Metodo que obtiene un objeto de la tabla según su id
+     * @return Corral buscado
+     * @throws SQLException
+     */
     @Override
     public Corral findById(String id) throws SQLException {
         Corral result = null;
@@ -63,6 +78,11 @@ public class CorralDAO implements DAO<Corral> {
         return result;
     }
 
+    /**
+     * Metodo que agrega o modifica un objeto de la tabla
+     * @return Corral agregado/modificado
+     * @throws SQLException
+     */
     @Override
     public Corral save(Corral entity) throws SQLException {
         Corral result = new Corral();
@@ -92,6 +112,10 @@ public class CorralDAO implements DAO<Corral> {
         return result;
     }
 
+    /**
+     * Metodo que elimina un objeto de la tabla según su id
+     * @throws SQLException
+     */
     @Override
     public void delete(Corral entity) throws SQLException {
         if (entity != null) {

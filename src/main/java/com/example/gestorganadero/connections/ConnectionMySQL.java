@@ -9,6 +9,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
+/**
+ * Clase que contiene la conexion a la base datos
+ */
 public class ConnectionMySQL {
 
     private String file = "conexion.xml";

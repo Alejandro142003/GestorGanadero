@@ -2,7 +2,6 @@ package com.example.gestorganadero.dao;
 
 import com.example.gestorganadero.connections.ConnectionMySQL;
 import com.example.gestorganadero.domain.Ganadero;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,6 +9,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase GanaderoDAO que implementa DAO que contiene todas las consultas a la tabla
+ * ganadero de la base de datos.
+ */
 public class GanaderoDAO implements DAO<Ganadero> {
     private final static String FINDALL ="SELECT * from ganadero";
     private final static String FINBYID ="SELECT * from ganadero WHERE IdGanadero=?";
@@ -27,6 +30,12 @@ public class GanaderoDAO implements DAO<Ganadero> {
         this.conn= ConnectionMySQL.getConnect();
     }
 
+    /**
+     * Metodo que obtiene todas las entradas de la tabla
+     * @return Todas las entras de la tabla
+     * @throws SQLException
+     */
+    @Override
     public List<Ganadero> findAll() throws SQLException {
         List<Ganadero> result = new ArrayList();
         try(PreparedStatement pst=this.conn.prepareStatement(FINDALL)){
@@ -47,6 +56,11 @@ public class GanaderoDAO implements DAO<Ganadero> {
         return result;
     }
 
+    /**
+     * Metodo que obtiene un objeto de la tabla según su id
+     * @return Ganadero buscado
+     * @throws SQLException
+     */
     public Ganadero findById(String id) throws SQLException {
         Ganadero result = null;
         try(PreparedStatement pst=this.conn.prepareStatement(FINBYID)){
@@ -67,6 +81,11 @@ public class GanaderoDAO implements DAO<Ganadero> {
         return result;
     }
 
+    /**
+     * Metodo que agrega o modifica un objeto de la tabla
+     * @return Ganadero agregado/modificado
+     * @throws SQLException
+     */
     public Ganadero save(Ganadero entity) throws SQLException {
         Ganadero result = new Ganadero();
         if (entity != null) {
@@ -98,6 +117,10 @@ public class GanaderoDAO implements DAO<Ganadero> {
         return result;
     }
 
+    /**
+     * Metodo que elimina un objeto de la tabla según su id
+     * @throws SQLException
+     */
     public void delete(Ganadero entity) throws SQLException {
         if (entity != null) {
             try (PreparedStatement pst = this.conn.prepareStatement(DELETE)) {

@@ -23,6 +23,9 @@ import java.sql.*;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Clase controlador de animal que extiende App e implementa Initializable
+ */
 public class Animal extends App implements Initializable {
     @FXML
     private Pane btn_ganaderia;
@@ -71,6 +74,12 @@ public class Animal extends App implements Initializable {
     private GanaderiaDAO ganaderiadao;
 
     private ObservableList<com.example.gestorganadero.domain.Animal> listaAnimales;
+
+    /**
+     * @param url
+     * @param resourceBundle
+     * @Metodo Initialize para cargar los datos de la vista
+     */
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Lógica de inicialización del controlador
@@ -135,23 +144,39 @@ public class Animal extends App implements Initializable {
         });
     }
 
+    /**
+     * @Metodo Cambia a la vista de Login
+     * @throws IOException
+     */
     @FXML
     private void btnLogout() throws IOException {
         App.setRoot("login");
     }
+
+    /**
+     * @Metodo Cambia a la vista de edicion de usuario
+     * @throws IOException
+     */
     @FXML
     private void linkEdit() throws IOException {
         App.setRoot("editarUsuario");
     }
 
+    /**
+     * @Metodo Cambia a la vista de Corral
+     * @throws IOException
+     */
     @FXML
     private void btnCorral() throws IOException {
         App.setRoot("corral");
     }
 
+    /**
+     * @Metodo Cambia a la vista de Ganaderia
+     * @throws IOException
+     */
     @FXML
     private void btnGanaderia() throws IOException {
         App.setRoot("ganaderia");
     }
-
 }

@@ -10,6 +10,9 @@ import javafx.scene.paint.Color;
 
 import java.io.IOException;
 
+/**\
+ * Clase controller Login que extiende App
+ */
 public class Login extends App {
     @FXML
     private Button btn_login;
@@ -23,6 +26,11 @@ public class Login extends App {
     @FXML
     private PasswordField passField;
 
+    /**
+     * @Metodo Valida usuario y contraseña para que en caso de que no sea admin admin
+     * no se pueda accedera a la App
+     * @throws IOException
+     */
     @FXML
     private void btnLoginValidate() throws IOException { //Controlador de usuario y contraseña
         if (userField.getText().equals("admin") && passField.getText().equals("admin")){

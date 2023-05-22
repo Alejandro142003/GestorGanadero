@@ -2,6 +2,9 @@ package com.example.gestorganadero.domain;
 
 import java.util.Objects;
 
+/**
+ * Clase Persona que contiene un constructor, getters and setters, hashcode e equals de la primary key y el metodo toString para despues extender esta clase.
+ */
 public class Persona {
     protected String dni;
     protected String nombre;

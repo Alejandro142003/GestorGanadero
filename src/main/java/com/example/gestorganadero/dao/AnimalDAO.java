@@ -1,16 +1,18 @@
 package com.example.gestorganadero.dao;
 
 import com.example.gestorganadero.domain.Animal;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.example.gestorganadero.connections.ConnectionMySQL;
 
+/**
+ * Clase AnimalDAO que implementa DAO que contiene todas las consultas a la tabla
+ * animal de la base de datos.
+ */
 public class AnimalDAO implements DAO<Animal> {
     private final static String FINDALL ="SELECT * from animal";
     private final static String FINBYID ="SELECT * from animal WHERE crotal=?";
@@ -26,6 +28,11 @@ public class AnimalDAO implements DAO<Animal> {
         this.conn=ConnectionMySQL.getConnect();
     }
 
+    /**
+     * Metodo que obtiene todas las entradas de la tabla
+     * @return Todas las entras de la tabla
+     * @throws SQLException
+     */
     @Override
     public List<Animal> findAll() throws SQLException {
         List<Animal> result = new ArrayList();
@@ -49,6 +56,11 @@ public class AnimalDAO implements DAO<Animal> {
         return result;
     }
 
+    /**
+     * Metodo que obtiene un objeto de la tabla según su id
+     * @return Animal buscado
+     * @throws SQLException
+     */
     public Animal findById(String id) throws SQLException {
         Animal result = null;
         try(PreparedStatement pst=this.conn.prepareStatement(FINBYID)){
@@ -71,6 +83,11 @@ public class AnimalDAO implements DAO<Animal> {
         return result;
     }
 
+    /**
+     * Metodo que agrega o modifica un objeto de la tabla
+     * @return Animal agregado/modificado
+     * @throws SQLException
+     */
     public Animal save(Animal entity) throws SQLException {
         Animal result = new Animal();
         if (entity != null) {
@@ -105,6 +122,10 @@ public class AnimalDAO implements DAO<Animal> {
         return result;
     }
 
+    /**
+     * Metodo que elimina un objeto de la tabla según su id
+     * @throws SQLException
+     */
     @Override
     public void delete(Animal entity) throws SQLException {
         if (entity != null) {

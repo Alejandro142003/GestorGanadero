@@ -1,13 +1,0 @@
-
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÚ¯Šıÿÿÿÿ8Á”×†ƒ1
-m	java:S116"QRename this field "Crotal" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùë›Ù8Æ”×†ƒ1
-u	java:S116
-"TRename this field "Lactancia" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùü˜Ûÿÿÿÿÿ8Æ”×†ƒ1
-m	java:S116"QRename this field "Vacuna" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÈÊ8Æ”×†ƒ1
-p	java:S116"ORename this field "Edad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕŞ‚ğúÿÿÿÿ8Æ”×†ƒ1
-q	java:S116"PRename this field "Hijos" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ßªğùÿÿÿÿ8Æ”×†ƒ1
-p	java:S116"ORename this field "Sexo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏâûÈûÿÿÿÿ8Æ”×†ƒ1
-t	java:S116"SRename this field "IdCorral" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ı““åøÿÿÿÿ8Æ”×†ƒ1
-b	java:S107"AConstructor has 9 parameters, which is greater than 7 authorized.(ÈÚ¯Šıÿÿÿÿ8Ç”×†ƒ1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ì”×†ƒ1

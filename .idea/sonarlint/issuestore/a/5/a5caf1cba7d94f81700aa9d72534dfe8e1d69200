@@ -1,6 +1,0 @@
-
-r	java:S116"QRename this field "Nombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÌ½ãúÿÿÿÿ8ý’¶˜ƒ1
-u	java:S116"TRename this field "Apellidos" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Û„çþÿÿÿÿ8ý’¶˜ƒ1
-t	java:S116"SRename this field "Telefono" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä½ËÙÿÿÿÿÿ8ý’¶˜ƒ1
-o	java:S116"SRename this field "btn_save" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ˆ¢ø8ý’¶˜ƒ1
-w	java:S116"VRename this field "link_volver" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íè·©úÿÿÿÿ8ý’¶˜ƒ1

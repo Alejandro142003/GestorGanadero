@@ -1,8 +1,10 @@
 package com.example.gestorganadero.domain;
 
-import java.util.List;
 import java.util.Objects;
 
+/**
+ * Clase Animal que contiene todos los atributos de la tabla Animal, un constructor, getters and setters, hashcode e equals de la primary key y el metodo toString
+ */
 public class Animal {
     private int Crotal;
     private int madre;

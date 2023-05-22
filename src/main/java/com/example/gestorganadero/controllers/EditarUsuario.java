@@ -9,6 +9,9 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+/**
+ * Clase controlador que extiende App para la vista de edición de usuario
+ */
 public class EditarUsuario extends App {
     @FXML
     private TextField Nombre;
@@ -25,11 +28,19 @@ public class EditarUsuario extends App {
     @FXML
     private Label link_volver;
 
+    /**
+     * @Metodo Botón que guarda los cambios
+     * @throws IOException
+     */
     @FXML
     private void btnSave() throws IOException {
         App.setRoot("ganaderia");
     }
 
+    /**
+     * @Metodo Link para volver a la vista de Ganaderia
+     * @throws IOException
+     */
     @FXML
     private void  linkVolver() throws IOException {
         App.setRoot("ganaderia");

@@ -2,6 +2,10 @@ package com.example.gestorganadero.domain;
 
 import java.util.Objects;
 
+/**
+ * Clase Ganadero que extiende de Persona que contiene todos los atributos de la tabla Ganadero, un constructor, getters and setters, hashcode e equals de la primary key
+ * y el metodo toString
+ */
 public class Ganadero extends Persona{
     private int idGanadero;
     private String password;
