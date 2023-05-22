@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class Login extends App {
     @FXML
-    private Button btn_login;
+    private Button btnLogin;
 
     @FXML
     private Label labelUser;

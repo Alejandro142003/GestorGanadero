@@ -69,9 +69,7 @@ public class Animal extends App implements Initializable {
     @FXML
     private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCorral;
 
-    private AnimalDAO adao;
-    private GanaderoDAO gdao;
-    private GanaderiaDAO ganaderiadao;
+
 
     private ObservableList<com.example.gestorganadero.domain.Animal> listaAnimales;
 
@@ -83,9 +81,9 @@ public class Animal extends App implements Initializable {
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Lógica de inicialización del controlador
-        adao = new AnimalDAO();
-        gdao = new GanaderoDAO();
-        ganaderiadao = new GanaderiaDAO();
+        AnimalDAO adao = new AnimalDAO();
+        GanaderoDAO gdao = new GanaderoDAO();
+        GanaderiaDAO ganaderiadao = new GanaderiaDAO();
         String ganaderoId = "1";
         String ganaderiaId = "410600000054";
 
@@ -94,7 +92,7 @@ public class Animal extends App implements Initializable {
         try {
             ganadero = gdao.findById(ganaderoId);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("El ganadero buscado no existe");
         }
 
         // Obtener la ganaderia
@@ -102,7 +100,7 @@ public class Animal extends App implements Initializable {
         try{
             ganaderia = ganaderiadao.findById(ganaderiaId);
         } catch (SQLException e){
-            throw new RuntimeException(e);
+            throw new RuntimeException("La ganaderia buscada no existe");
         }
 
         // Establecer nombre y usuarios en el label
