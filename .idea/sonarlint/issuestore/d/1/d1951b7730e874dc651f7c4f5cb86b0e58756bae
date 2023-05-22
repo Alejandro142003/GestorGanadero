@@ -1,0 +1,11 @@
+
+g	java:S1128"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÒŸ•¡„1
+g	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÒŸ•¡„1
+q	java:S116"URename this field "btn_animal" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¢±³8ÙŸ•¡„1
+v	java:S116"URename this field "btn_corral" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú›”·øÿÿÿÿ8ÙŸ•¡„1
+v	java:S116"URename this field "btn_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬¶«ßùÿÿÿÿ8ÙŸ•¡„1
+w	java:S116"VRename this field "link_editar" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌàµÓûÿÿÿÿ8ÙŸ•¡„1
+}
+java:S1450$"[Remove the "ganaderiadao" field and declare it as a local variable in the relevant methods.(Ğàúõøÿÿÿÿ8¹Ã–¡„1
+o
+java:S1450#"SRemove the "gdao" field and declare it as a local variable in the relevant methods.(Êâ*8¹Ã–¡„1

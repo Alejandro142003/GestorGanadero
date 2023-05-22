@@ -1,0 +1,12 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åş½–ùÿÿÿÿ8ÿ‰¥¢„1
+m	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß·›Ç8€Š¥¢„1
+p	java:S116	"ORename this field "REGA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´”±œûÿÿÿÿ8Õ×Šƒ1
+v	java:S116"URename this field "CensoTotal" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–°¸™úÿÿÿÿ8Õ×Šƒ1
+m	java:S116"QRename this field "Siglas" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ Ğ÷8Õ×Šƒ1
+r	java:S116"QRename this field "Nombre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş¾Îüÿÿÿÿ8Õ×Šƒ1
+u	java:S116"TRename this field "Localidad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓØ±Üıÿÿÿÿ8Õ×Šƒ1
+u	java:S116"TRename this field "Provincia" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û±ì½şÿÿÿÿ8Õ×Šƒ1
+s	java:S116"RRename this field "Titular" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ôµşÿÿÿÿ8…Š¥¢„1
+~	java:S116"]Rename this field "SistemaExplotacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ©ÔĞÿÿÿÿÿ8…Š¥¢„1
+b	java:S107"AConstructor has 9 parameters, which is greater than 7 authorized.(åş½–ùÿÿÿÿ8†Š¥¢„1
