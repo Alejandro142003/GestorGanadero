@@ -11,6 +11,13 @@ public class Persona {
     protected Integer telefono;
     protected String apellidos;
 
+    public Persona(String dni, String nombre, Integer telefono, String apellidos) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.apellidos = apellidos;
+    }
+
     public String getDni() {
         return dni;
     }

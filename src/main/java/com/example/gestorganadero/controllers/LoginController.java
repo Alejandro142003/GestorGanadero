@@ -13,7 +13,7 @@ import java.io.IOException;
 /**\
  * Clase controller Login que extiende App
  */
-public class Login extends App {
+public class LoginController extends App {
     @FXML
     private Button btnLogin;
 

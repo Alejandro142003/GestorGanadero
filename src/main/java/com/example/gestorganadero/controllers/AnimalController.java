@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 /**
  * Clase controlador de animal que extiende App e implementa Initializable
  */
-public class Animal extends App implements Initializable {
+public class AnimalController extends App implements Initializable {
     @FXML
     private Pane btn_ganaderia;
     @FXML

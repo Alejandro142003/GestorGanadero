@@ -41,7 +41,7 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
             try(ResultSet res = pst.executeQuery()){
                 while(res.next()) {
                     Ganaderia g = new Ganaderia();
-                    g.setREGA(res.getString("REGA"));
+                    g.setRega(res.getString("REGA"));
                     g.setNombre(res.getString("Nombre"));
                     g.setSiglas(res.getString("Siglas"));
                     g.setLocalidad(res.getString("Localidad"));
@@ -69,7 +69,7 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
             try(ResultSet res = pst.executeQuery()){
                 if(res.next()) {
                     result = new Ganaderia();
-                    result.setREGA(res.getString("REGA"));
+                    result.setRega(res.getString("REGA"));
                     result.setNombre(res.getString("Nombre"));
                     result.setSiglas(res.getString("Siglas"));
                     result.setLocalidad(res.getString("Localidad"));
@@ -92,11 +92,11 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
     public Ganaderia save(Ganaderia entity) throws SQLException {
         Ganaderia result = new Ganaderia();
         if (entity != null) {
-            Ganaderia g = findById(String.valueOf(entity.getREGA()));
+            Ganaderia g = findById(String.valueOf(entity.getRega()));
             if (g == null) {
                 //INSERT
                 try (PreparedStatement pst = this.conn.prepareStatement(INSERT)) {
-                    pst.setString(1, entity.getREGA());
+                    pst.setString(1, entity.getRega());
                     pst.setString(2, entity.getNombre());
                     pst.setString(3, entity.getSiglas());
                     pst.setString(4, entity.getLocalidad());
@@ -134,7 +134,7 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
     public void delete(Ganaderia entity) throws SQLException {
         if (entity != null) {
             try (PreparedStatement pst = this.conn.prepareStatement(DELETE)) {
-                pst.setString(1, entity.getREGA());
+                pst.setString(1, entity.getRega());
                 pst.executeUpdate();
             }
         }

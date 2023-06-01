@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * Clase controlador que extiende App para la vista de edición de usuario
  */
-public class EditarUsuario extends App {
+public class EditarUsuarioController extends App {
     @FXML
     private TextField Nombre;
     @FXML

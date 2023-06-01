@@ -1,5 +1,6 @@
 package com.example.gestorganadero.domain;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -9,27 +10,17 @@ import java.util.Objects;
 public class Ganadero extends Persona{
     private int idGanadero;
     private String password;
-    private String REGA;
+    private ArrayList<Ganaderia> ganaderias;
 
-    public Ganadero(String dni, String nombre, String apellidos, int telefono, int idGanadero, String password) {
-        super.dni = dni;
-        super.nombre = nombre;
-        super.apellidos = apellidos;
-        super.telefono = telefono;
+    public Ganadero(String dni, String nombre, Integer telefono, String apellidos, int idGanadero, String password, ArrayList<Ganaderia> ganaderias) {
+        super(dni, nombre, telefono, apellidos);
         this.idGanadero = idGanadero;
         this.password = password;
+        this.ganaderias = ganaderias;
     }
 
     public Ganadero() {
-        this("","","",0,0,"");
-    }
-
-    public String getREGA() {
-        return REGA;
-    }
-
-    public void setREGA(String REGA) {
-        this.REGA = REGA;
+        this("","",0,"",0,"",ganaderias);
     }
 
     public int getIdGanadero() {
@@ -48,18 +39,26 @@ public class Ganadero extends Persona{
         this.password = password;
     }
 
+    public ArrayList<Ganaderia> getGanaderias() {
+        return ganaderias;
+    }
+
+    public void setGanaderias(ArrayList<Ganaderia> ganaderias) {
+        this.ganaderias = ganaderias;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Ganadero ganadero = (Ganadero) o;
-        return idGanadero == ganadero.idGanadero && Objects.equals(REGA, ganadero.REGA);
+        return idGanadero == ganadero.idGanadero;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), idGanadero, REGA);
+        return Objects.hash(super.hashCode(), idGanadero);
     }
 
     @Override
@@ -67,7 +66,7 @@ public class Ganadero extends Persona{
         return "Ganadero{" +
                 "idGanadero=" + idGanadero +
                 ", password='" + password + '\'' +
-                ", REGA='" + REGA + '\'' +
+                ", ganaderias=" + ganaderias +
                 ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", telefono=" + telefono +

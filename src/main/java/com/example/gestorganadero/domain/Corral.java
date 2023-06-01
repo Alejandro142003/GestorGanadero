@@ -1,5 +1,6 @@
 package com.example.gestorganadero.domain;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -14,27 +15,20 @@ public class Corral {
     * para que saque el número de animales total por corral*/
     private int censo;
 
-    private String REGA;
+    private Ganaderia ganaderia;
+    private ArrayList<Animal> animales;
 
-    public Corral(int id, String nombre, String tipo, int numeroAnimales, String REGA) {
-        this.idCorral = id;
+    public Corral(int idCorral, String nombre, String tipo, int censo, Ganaderia ganaderia, ArrayList<Animal> animales) {
+        this.idCorral = idCorral;
         this.nombre = nombre;
         this.tipo = tipo;
-        this.censo = numeroAnimales;
-        this.REGA = REGA;
+        this.censo = censo;
+        this.ganaderia = ganaderia;
+        this.animales = animales;
     }
 
-
-    public String getREGA() {
-        return REGA;
-    }
-
-    public void setREGA(String REGA) {
-        this.REGA = REGA;
-    }
-
-    public Corral(){
-        this(0,"","",0,"");
+    public Corral() {
+        this(0,"","",0,ganaderia,animales);
     }
 
     public int getIdCorral() {
@@ -69,17 +63,33 @@ public class Corral {
         this.censo = censo;
     }
 
+    public Ganaderia getGanaderia() {
+        return ganaderia;
+    }
+
+    public void setGanaderia(Ganaderia ganaderia) {
+        this.ganaderia = ganaderia;
+    }
+
+    public ArrayList<Animal> getAnimales() {
+        return animales;
+    }
+
+    public void setAnimales(ArrayList<Animal> animales) {
+        this.animales = animales;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Corral corral = (Corral) o;
-        return idCorral == corral.idCorral;
+        return idCorral == corral.idCorral && Objects.equals(ganaderia, corral.ganaderia);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idCorral);
+        return Objects.hash(idCorral, ganaderia);
     }
 
     @Override
@@ -89,7 +99,8 @@ public class Corral {
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", censo=" + censo +
-                ", rega='" + REGA + '\'' +
+                ", ganaderia=" + ganaderia +
+                ", animales=" + animales +
                 '}';
     }
 }

@@ -6,102 +6,102 @@ import java.util.Objects;
  * Clase Animal que contiene todos los atributos de la tabla Animal, un constructor, getters and setters, hashcode e equals de la primary key y el metodo toString
  */
 public class Animal {
-    private int Crotal;
-    private int madre;
-    private int padre;
-    private float Lactancia;
-    private String Vacuna;
-    private int Edad;
-    private int Hijos;
-    private String Sexo;
-    private int IdCorral;
+    private int crotal;
+    private Animal madre;
+    private Animal padre;
+    private float lactancia;
+    private String vacuna;
+    private int edad;
+    private int hijos;
+    private String sexo;
+    private Corral corral;
 
-    public Animal(int crotal, int madre, int padre, float lactancia, String vacuna, int edad, int hijos,String sexo, int IdCorral) {
-        this.Crotal = crotal;
+    public Animal(int crotal, Animal madre, Animal padre, float lactancia, String vacuna, int edad, int hijos, String sexo, Corral corral) {
+        this.crotal = crotal;
         this.madre = madre;
         this.padre = padre;
-        this.Lactancia = lactancia;
-        this.Vacuna = vacuna;
-        this.Edad = edad;
-        this.Hijos = hijos;
-        this.Sexo = sexo;
-        this.IdCorral = IdCorral;
+        this.lactancia = lactancia;
+        this.vacuna = vacuna;
+        this.edad = edad;
+        this.hijos = hijos;
+        this.sexo = sexo;
+        this.corral = corral;
     }
 
     public Animal(){
-        this(0,0,0,0,"",0,0,"",0);
-    }
-
-    public void setIdCorral(int idCorral) {
-        IdCorral = idCorral;
-    }
-
-    public String getSexo() {
-        return Sexo;
-    }
-
-    public void setSexo(String sexo) {
-        Sexo = sexo;
-    }
-
-    public int getIdCorral() {
-        return IdCorral;
+        this(0,madre,padre,0.0,"",0,0,"",corral);
     }
 
     public int getCrotal() {
-        return Crotal;
+        return crotal;
     }
 
     public void setCrotal(int crotal) {
-        Crotal = crotal;
+        this.crotal = crotal;
     }
 
-    public int getMadre() {
+    public Animal getMadre() {
         return madre;
     }
 
-    public void setMadre(int madre) {
+    public void setMadre(Animal madre) {
         this.madre = madre;
     }
 
-    public int getPadre() {
+    public Animal getPadre() {
         return padre;
     }
 
-    public void setPadre(int padre) {
+    public void setPadre(Animal padre) {
         this.padre = padre;
     }
 
     public float getLactancia() {
-        return Lactancia;
+        return lactancia;
     }
 
     public void setLactancia(float lactancia) {
-        Lactancia = lactancia;
+        this.lactancia = lactancia;
     }
 
     public String getVacuna() {
-        return Vacuna;
+        return vacuna;
     }
 
     public void setVacuna(String vacuna) {
-        Vacuna = vacuna;
+        this.vacuna = vacuna;
     }
 
     public int getEdad() {
-        return Edad;
+        return edad;
     }
 
     public void setEdad(int edad) {
-        Edad = edad;
+        this.edad = edad;
     }
 
     public int getHijos() {
-        return Hijos;
+        return hijos;
     }
 
     public void setHijos(int hijos) {
-        Hijos = hijos;
+        this.hijos = hijos;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public Corral getCorral() {
+        return corral;
+    }
+
+    public void setCorral(Corral corral) {
+        this.corral = corral;
     }
 
     @Override
@@ -109,26 +109,26 @@ public class Animal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Animal animal = (Animal) o;
-        return Crotal == animal.Crotal && Objects.equals(madre, animal.madre) && Objects.equals(padre, animal.padre);
+        return crotal == animal.crotal;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Crotal, madre, padre);
+        return Objects.hash(crotal);
     }
 
     @Override
     public String toString() {
         return "Animal{" +
-                "Crotal=" + Crotal +
+                "crotal=" + crotal +
                 ", madre=" + madre +
                 ", padre=" + padre +
-                ", Lactancia=" + Lactancia +
-                ", Vacuna='" + Vacuna + '\'' +
-                ", Edad=" + Edad +
-                ", Hijos=" + Hijos +
-                ", Sexo='" + Sexo + '\'' +
-                ", IdCorral=" + IdCorral +
+                ", lactancia=" + lactancia +
+                ", vacuna='" + vacuna + '\'' +
+                ", edad=" + edad +
+                ", hijos=" + hijos +
+                ", sexo='" + sexo + '\'' +
+                ", corral=" + corral +
                 '}';
     }
 }

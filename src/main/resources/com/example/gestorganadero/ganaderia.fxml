@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/ganadero.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.Ganaderia">
+<AnchorPane id="background" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/ganadero.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.GanaderiaController">
    <children>
       <Pane id="Panel" layoutX="15.0" layoutY="15.0" prefHeight="870.0" prefWidth="1410.0" />
       <Pane layoutX="15.0" layoutY="15.0" prefHeight="870.0" prefWidth="1410.0">
