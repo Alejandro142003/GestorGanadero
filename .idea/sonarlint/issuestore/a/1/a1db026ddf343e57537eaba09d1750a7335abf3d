@@ -1,0 +1,18 @@
+
+Z	java:S112_"FDefine and throw a dedicated exception instead of using a generic one.(žÛ¥"
+[	java:S112g"FDefine and throw a dedicated exception instead of using a generic one.(–ÒÔË
+a	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+e
+java:S2095V"JUse try-with-resources or close this "GanaderiaDAO" in a "finally" clause.(³ÞÔÿúÿÿÿÿ
+d
+java:S2095U"IUse try-with-resources or close this "GanaderoDAO" in a "finally" clause.(¯‚ëÂþÿÿÿÿ
+b
+java:S2095T"GUse try-with-resources or close this "AnimalDAO" in a "finally" clause.(ôúƒëÿÿÿÿÿ
+m	java:S116"XRename this field "btn_ganaderia" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çñ¹ì
+o	java:S116!"URename this field "btn_corral" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú›”·øÿÿÿÿ
+o	java:S116#"URename this field "btn_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬¶«ßùÿÿÿÿ
+p	java:S116%"VRename this field "link_editar" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌàµÓûÿÿÿÿ
+r
+java:S1450J"\Remove the "listaAnimales" field and declare it as a local variable in the relevant methods.(ÕØßû
+N
+java:S1481Œ"7Remove this unused "animalSeleccionado" local variable.(ÅãÄŸ

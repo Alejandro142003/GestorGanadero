@@ -1,6 +1,7 @@
 package com.example.gestorganadero.dao;
 
 import com.example.gestorganadero.connections.ConnectionMySQL;
+import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,7 +48,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     g.setNombre(res.getString("Nombre"));
                     g.setApellidos(res.getString("Apellidos"));
                     g.setTelefono(res.getInt("Telefono"));
-                    g.setREGA(res.getString("REGA"));
+                    g.setGanaderias((ArrayList<Ganaderia>) res.getArray("ganaderias"));
                     g.setPassword(res.getString("Password"));
                     result.add(g);
                 }

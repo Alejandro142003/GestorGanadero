@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 /**
  * Clase controlador de corral que extiende App e implementa Initializable
  */
-public class Corral extends App implements Initializable {
+public class CorralController extends App implements Initializable {
     @FXML
     private Pane btn_ganaderia;
     @FXML

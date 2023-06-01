@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/editUser.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.EditarUsuario">
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/editUser.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.EditarUsuarioController">
    <children>
       <Pane id="Panel" layoutX="963.0" layoutY="118.0" prefHeight="665.0" prefWidth="402.0">
          <children>

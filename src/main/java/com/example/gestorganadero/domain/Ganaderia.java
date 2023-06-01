@@ -1,42 +1,48 @@
 package com.example.gestorganadero.domain;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  * Clase Ganaderia que contiene todos los atributos de la tabla Ganaderia, un constructor, getters and setters, hashcode e equals de la primary key y el metodo toString
  */
 public class Ganaderia {
-    private String REGA;
+    private String rega;
     private int age;//Antigüedad
-    private int CensoTotal;
-    private String Siglas;
-    private String Nombre;
-    private String Localidad;
-    private String Provincia;
-    private String Titular;
-    private String SistemaExplotacion;
+    private int censoTotal;
+    private String siglas;
+    private String nombre;
+    private String localidad;
+    private String provincia;
+    private String titular;
+    private String sistemaExplotacion;
+    private Ganadero owner;
+    private ArrayList<Corral> corrales;
 
-    public Ganaderia(String REGA, int age, int censoTotal, String siglas, String nombre, String localidad, String provincia, String titular, String sistemaExplotacion) {
-        this.REGA = REGA;
+    public Ganaderia(String rega, int age, int censoTotal, String siglas, String nombre, String localidad, String provincia, String titular, String sistemaExplotacion, Ganadero owner, ArrayList<Corral> corrales) {
+        this.rega = rega;
         this.age = age;
-        CensoTotal = censoTotal;
-        Siglas = siglas;
-        Nombre = nombre;
-        Localidad = localidad;
-        Provincia = provincia;
-        Titular = titular;
-        SistemaExplotacion = sistemaExplotacion;
+        this.censoTotal = censoTotal;
+        this.siglas = siglas;
+        this.nombre = nombre;
+        this.localidad = localidad;
+        this.provincia = provincia;
+        this.titular = titular;
+        this.sistemaExplotacion = sistemaExplotacion;
+        this.owner = owner;
+        this.corrales = corrales;
     }
 
     public Ganaderia(){
-        this("",0,0,"","","","","","");
-    }
-    public String getREGA() {
-        return REGA;
+        this("",0,0,"","","","","","",owner,corrales);
     }
 
-    public void setREGA(String REGA) {
-        this.REGA = REGA;
+    public String getRega() {
+        return rega;
+    }
+
+    public void setRega(String rega) {
+        this.rega = rega;
     }
 
     public int getAge() {
@@ -48,59 +54,75 @@ public class Ganaderia {
     }
 
     public int getCensoTotal() {
-        return CensoTotal;
+        return censoTotal;
     }
 
     public void setCensoTotal(int censoTotal) {
-        CensoTotal = censoTotal;
+        this.censoTotal = censoTotal;
     }
 
     public String getSiglas() {
-        return Siglas;
+        return siglas;
     }
 
     public void setSiglas(String siglas) {
-        Siglas = siglas;
+        this.siglas = siglas;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getLocalidad() {
-        return Localidad;
+        return localidad;
     }
 
     public void setLocalidad(String localidad) {
-        Localidad = localidad;
+        this.localidad = localidad;
     }
 
     public String getProvincia() {
-        return Provincia;
+        return provincia;
     }
 
     public void setProvincia(String provincia) {
-        Provincia = provincia;
+        this.provincia = provincia;
     }
 
     public String getTitular() {
-        return Titular;
+        return titular;
     }
 
     public void setTitular(String titular) {
-        Titular = titular;
+        this.titular = titular;
     }
 
     public String getSistemaExplotacion() {
-        return SistemaExplotacion;
+        return sistemaExplotacion;
     }
 
     public void setSistemaExplotacion(String sistemaExplotacion) {
-        SistemaExplotacion = sistemaExplotacion;
+        this.sistemaExplotacion = sistemaExplotacion;
+    }
+
+    public Ganadero getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Ganadero owner) {
+        this.owner = owner;
+    }
+
+    public ArrayList<Corral> getCorrales() {
+        return corrales;
+    }
+
+    public void setCorrales(ArrayList<Corral> corrales) {
+        this.corrales = corrales;
     }
 
     @Override
@@ -108,26 +130,28 @@ public class Ganaderia {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ganaderia ganaderia = (Ganaderia) o;
-        return REGA == ganaderia.REGA;
+        return Objects.equals(rega, ganaderia.rega) && Objects.equals(owner, ganaderia.owner);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(REGA);
+        return Objects.hash(rega, owner);
     }
 
     @Override
     public String toString() {
         return "Ganaderia{" +
-                "REGA=" + REGA +
+                "rega='" + rega + '\'' +
                 ", age=" + age +
-                ", CensoTotal=" + CensoTotal +
-                ", Siglas='" + Siglas + '\'' +
-                ", Nombre='" + Nombre + '\'' +
-                ", Localidad='" + Localidad + '\'' +
-                ", Provincia='" + Provincia + '\'' +
-                ", Titular='" + Titular + '\'' +
-                ", SistemaExplotacion='" + SistemaExplotacion + '\'' +
+                ", censoTotal=" + censoTotal +
+                ", siglas='" + siglas + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", localidad='" + localidad + '\'' +
+                ", provincia='" + provincia + '\'' +
+                ", titular='" + titular + '\'' +
+                ", sistemaExplotacion='" + sistemaExplotacion + '\'' +
+                ", owner=" + owner +
+                ", corrales=" + corrales +
                 '}';
     }
 }
