@@ -28,7 +28,12 @@ public class Corral {
     }
 
     public Corral() {
-        this(0,"","",0,ganaderia,animales);
+        Ganaderia g = null;
+        ArrayList<Animal> a = null;
+        this.idCorral = 0;
+        this.nombre = "";
+        this.tipo = "";
+        this.censo = 0;
     }
 
     public int getIdCorral() {

@@ -34,7 +34,17 @@ public class Ganaderia {
     }
 
     public Ganaderia(){
-        this("",0,0,"","","","","","",owner,corrales);
+        Ganadero g = null;
+        ArrayList<Corral> c = null;
+        this.rega = "";
+        this.age = 0;
+        this.censoTotal = 0;
+        this.siglas = "";
+        this.nombre = "";
+        this.localidad = "";
+        this.provincia = "";
+        this.titular = "";
+        this.sistemaExplotacion = "";
     }
 
     public String getRega() {

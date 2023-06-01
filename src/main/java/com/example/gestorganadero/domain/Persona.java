@@ -18,6 +18,10 @@ public class Persona {
         this.apellidos = apellidos;
     }
 
+    public Persona() {
+        this("", "", 0, "");
+    }
+
     public String getDni() {
         return dni;
     }
