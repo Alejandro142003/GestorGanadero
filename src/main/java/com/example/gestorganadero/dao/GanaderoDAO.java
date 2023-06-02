@@ -48,7 +48,6 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     g.setNombre(res.getString("Nombre"));
                     g.setApellidos(res.getString("Apellidos"));
                     g.setTelefono(res.getInt("Telefono"));
-                    g.setGanaderias((ArrayList<Ganaderia>) res.getArray("ganaderias"));
                     g.setPassword(res.getString("Password"));
                     result.add(g);
                 }
@@ -74,7 +73,6 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     result.setNombre(res.getString("Nombre"));
                     result.setApellidos(res.getString("Apellidos"));
                     result.setTelefono(res.getInt("Telefono"));
-                    result.setREGA(res.getString("REGA"));
                     result.setPassword(res.getString("Password"));
                 }
             }
@@ -99,8 +97,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     pst.setString(3, entity.getNombre());
                     pst.setString(4, entity.getApellidos());
                     pst.setInt(5, entity.getTelefono());
-                    pst.setString(6, entity.getREGA());
-                    pst.setString(7, entity.getPassword());
+                    pst.setString(6, entity.getPassword());
                     pst.executeUpdate();
                 }
             }else{
@@ -129,6 +126,18 @@ public class GanaderoDAO implements DAO<Ganadero> {
                 pst.executeUpdate();
             }
         }
+    }
+
+    List<Ganaderia>findGanaderias(Ganadero g) throws SQLException {
+        GanaderiaDAO ganaderiasDAO = null;
+        List<Ganaderia> ganaderias = ganaderiasDAO.findAll();
+        List<Ganaderia> misGanaderias = null;
+        for (Ganaderia ganaderia:ganaderias) {
+            if (g == ganaderia.getOwner()){
+                misGanaderias.add(ganaderia);
+            }
+        }
+        return  misGanaderias;
     }
 
     public void close() throws Exception {
