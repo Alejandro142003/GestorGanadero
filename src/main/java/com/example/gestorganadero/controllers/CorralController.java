@@ -4,6 +4,7 @@ import com.example.gestorganadero.App;
 import com.example.gestorganadero.dao.CorralDAO;
 import com.example.gestorganadero.dao.GanaderiaDAO;
 import com.example.gestorganadero.dao.GanaderoDAO;
+import com.example.gestorganadero.domain.Corral;
 import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
 import javafx.collections.FXCollections;
@@ -40,23 +41,23 @@ public class CorralController extends App implements Initializable {
     @FXML
     private Label asociacion;
     @FXML
-    private TableView<com.example.gestorganadero.domain.Corral> tbCorral;
+    private TableView<Corral> tbCorral;
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Corral, Integer> colIdCorral;
+    private TableColumn<Corral, Integer> colIdCorral;
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Corral, String> colNombre;
+    private TableColumn<Corral, String> colNombre;
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Corral, String> colTipo;
+    private TableColumn<Corral, String> colTipo;
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Corral, Integer> colCenso;
+    private TableColumn<Corral, Integer> colCenso;
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Corral, String> colREGA;
+    private TableColumn<Corral, String> colGanaderia;
 
     private CorralDAO adao;
     private GanaderoDAO gdao;
     private GanaderiaDAO ganaderiadao;
 
-    private ObservableList<com.example.gestorganadero.domain.Corral> listaCorrales;
+    private ObservableList<Corral> listaCorrales;
 
     /**
      * @param url
@@ -87,6 +88,13 @@ public class CorralController extends App implements Initializable {
         } catch (SQLException e){
             throw new RuntimeException(e);
         }
+        
+        //Obtener lista de ganaderias del ganadero
+        try {
+            List<Ganaderia> ganaderias = gdao.findGanaderias(ganadero);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         // Establecer nombre y usuarios en el label
         username.setText(ganadero.getNombre() + " " + ganadero.getApellidos());
@@ -102,10 +110,10 @@ public class CorralController extends App implements Initializable {
         colNombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
         colTipo.setCellValueFactory(new PropertyValueFactory<>("Tipo"));
         colCenso.setCellValueFactory(new PropertyValueFactory<>("Censo"));
-        colREGA.setCellValueFactory(new PropertyValueFactory<>("REGA"));
+        colGanaderia.setCellValueFactory(new PropertyValueFactory<>("Ganaderia"));
 
         // Asignar la lista de corrales a la tabla
-        List<com.example.gestorganadero.domain.Corral> aux = null;
+        List<Corral> aux = null;
         try {
             aux = adao.findAll();
         } catch (SQLException e) {
@@ -118,7 +126,7 @@ public class CorralController extends App implements Initializable {
         tbCorral.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 // Actualizar la vista de detalles con los datos del corral seleccionado
-                com.example.gestorganadero.domain.Corral corralSeleccionado = tbCorral.getSelectionModel().getSelectedItem();
+                Corral corralSeleccionado = tbCorral.getSelectionModel().getSelectedItem();
             }
         });
     }

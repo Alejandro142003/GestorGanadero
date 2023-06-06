@@ -27,7 +27,7 @@
                         <Pane id="IconoGanaderia" layoutX="14.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
                         <Label alignment="CENTER" layoutX="64.0" layoutY="20.0" prefHeight="30.0" prefWidth="200.0" text="Ganaderia" textAlignment="JUSTIFY">
                            <font>
-                              <Font name="Lato Regular" size="22.0" />
+                              <Font name="Arial" size="22.0" />
                            </font>
                         </Label>
                      </children>
@@ -43,7 +43,7 @@
                         <Pane id="IconoVeterinaria" layoutX="14.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
                         <Label alignment="CENTER" layoutX="64.0" layoutY="20.0" prefHeight="30.0" prefWidth="200.0" text="Veterinaria" textAlignment="JUSTIFY">
                            <font>
-                              <Font name="Lato Regular" size="22.0" />
+                              <Font name="Arial" size="22.0" />
                            </font>
                         </Label>
                      </children>
@@ -59,7 +59,7 @@
                         <Pane id="IconoCorral" layoutX="14.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
                         <Label alignment="CENTER" layoutX="64.0" layoutY="20.0" prefHeight="30.0" prefWidth="200.0" text="Corrales" textAlignment="JUSTIFY">
                            <font>
-                              <Font name="Lato Regular" size="22.0" />
+                              <Font name="Arial" size="22.0" />
                            </font>
                         </Label>
                      </children>
@@ -75,7 +75,7 @@
                         <Pane id="IconoAnimal" layoutX="14.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
                         <Label alignment="CENTER" layoutX="64.0" layoutY="20.0" prefHeight="30.0" prefWidth="200.0" text="Animales" textAlignment="JUSTIFY">
                            <font>
-                              <Font name="Lato Regular" size="22.0" />
+                              <Font name="Arial" size="22.0" />
                            </font>
                         </Label>
                      </children>
@@ -91,7 +91,7 @@
                         <Pane id="IconoCalendario" layoutX="14.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" />
                         <Label alignment="CENTER" layoutX="64.0" layoutY="20.0" prefHeight="30.0" prefWidth="200.0" text="Calendario" textAlignment="JUSTIFY">
                            <font>
-                              <Font name="Lato Regular" size="22.0" />
+                              <Font name="Arial" size="22.0" />
                            </font>
                         </Label>
                      </children>
@@ -116,7 +116,7 @@
                         <Pane id="UserImage" layoutX="14.0" layoutY="11.0" prefHeight="130.0" prefWidth="130.0" />
                         <Label fx:id="username" layoutX="182.0" layoutY="24.0" prefHeight="52.0" prefWidth="536.0" text="Nombre Apellido1 Apellido2">
                            <font>
-                              <Font name="Lato Regular" size="40.0" />
+                              <Font name="Arial" size="40.0" />
                            </font>
                         </Label>
                         <Label fx:id="asociacion" layoutX="182.0" layoutY="76.0" prefHeight="30.0" prefWidth="395.0" text="Asociación SIGLAS">
@@ -160,7 +160,7 @@
                            <children>
                               <Label alignment="CENTER" contentDisplay="CENTER" text="Añadir" textFill="#0ac20a">
                                  <font>
-                                    <Font name="Lato Regular" size="18.0" />
+                                    <Font name="Arial" size="18.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="20.0" />
@@ -168,7 +168,7 @@
                               </Label>
                               <Label alignment="CENTER" contentDisplay="CENTER" text="Editar" textFill="#0ac20a">
                                  <font>
-                                    <Font name="Lato Regular" size="18.0" />
+                                    <Font name="Arial" size="18.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="20.0" />
@@ -176,7 +176,7 @@
                               </Label>
                               <Label alignment="CENTER" contentDisplay="CENTER" text="Eliminar" textFill="#0ac20a">
                                  <font>
-                                    <Font name="Lato Regular" size="18.0" />
+                                    <Font name="Arial" size="18.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="20.0" />
@@ -184,7 +184,7 @@
                               </Label>
                               <Label alignment="CENTER" prefHeight="23.0" prefWidth="846.0" text="Animales" textFill="#0ac20a">
                                  <font>
-                                    <Font name="Lato Regular" size="18.0" />
+                                    <Font name="Arial" size="18.0" />
                                  </font>
                               </Label>
                            </children>

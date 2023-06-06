@@ -128,9 +128,10 @@ public class GanaderoDAO implements DAO<Ganadero> {
         }
     }
 
-    List<Ganaderia>findGanaderias(Ganadero g) throws SQLException {
-        GanaderiaDAO ganaderiasDAO = null;
-        List<Ganaderia> ganaderias = ganaderiasDAO.findAll();
+    private GanaderiaDAO ganaderiadao;
+    public List<Ganaderia>findGanaderias(Ganadero g) throws SQLException {
+        ganaderiadao = new GanaderiaDAO();
+        List<Ganaderia> ganaderias = ganaderiadao.findAll();
         List<Ganaderia> misGanaderias = null;
         for (Ganaderia ganaderia:ganaderias) {
             if (g == ganaderia.getOwner()){

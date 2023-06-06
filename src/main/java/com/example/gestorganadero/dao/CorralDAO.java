@@ -17,7 +17,7 @@ import java.util.List;
 public class CorralDAO implements DAO<Corral> {
     private final static String FINDALL ="SELECT * from corral";
     private final static String FINBYID ="SELECT * from corral WHERE IdCorral=?";
-    private final static String INSERT ="INSERT INTO corral (IdCorral,Nombre,Tipo,Censo,REGA) VALUES (?,?,?,?,?)";
+    private final static String INSERT ="INSERT INTO corral (IdCorral,Nombre,Tipo,Censo) VALUES (?,?,?,?)";
     private final static String UPDATE ="UPDATE corral SET Nombre=?, Tipo=?, Censo=? WHERE IdCorral=?";
     private final static String DELETE = "DELETE FROM corral WHERE IdCorral=?";
 
@@ -47,7 +47,6 @@ public class CorralDAO implements DAO<Corral> {
                     c.setNombre(res.getString("Nombre"));
                     c.setTipo(res.getString("Tipo"));
                     c.setCenso(res.getInt("Censo"));
-                    c.setREGA(res.getString("REGA"));
                     result.add(c);
                 }
             }
@@ -71,7 +70,6 @@ public class CorralDAO implements DAO<Corral> {
                     result.setNombre(res.getString("Nombre"));
                     result.setTipo(res.getString("Tipo"));
                     result.setCenso(res.getInt("Censo"));
-                    result.setREGA(res.getString("REGA"));
                 }
             }
         }
@@ -95,7 +93,6 @@ public class CorralDAO implements DAO<Corral> {
                     pst.setString(2, entity.getNombre());
                     pst.setString(3, entity.getTipo());
                     pst.setInt(4, entity.getCenso());
-                    pst.setString(5, entity.getREGA());
                     pst.executeUpdate();
                 }
             }else{

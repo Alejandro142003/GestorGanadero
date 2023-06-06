@@ -20,7 +20,7 @@
                <children>
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="417.0" text="EDITAR USUARIO">
                      <font>
-                        <Font name="Lato Regular" size="22.0" />
+                        <Font name="Arial" size="22.0" />
                      </font>
                      <VBox.margin>
                         <Insets />
@@ -31,12 +31,12 @@
                   </Label>
                   <Label fx:id="labelUser" alignment="CENTER" prefHeight="23.0" prefWidth="408.0">
                      <font>
-                        <Font name="Lato Regular" size="12.0" />
+                        <Font name="Arial" size="12.0" />
                      </font>
                   </Label>
                   <Label prefHeight="17.0" prefWidth="423.0" text="Nombre">
                      <font>
-                        <Font name="Lato Regular" size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" />
@@ -47,7 +47,7 @@
                         <Insets left="53.0" right="52.0" top="11.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Lato Regular" size="12.0" />
+                        <Font name="Arial" size="12.0" />
                      </font>
                      <effect>
                         <DropShadow color="gray" offsetX="0" offsetY="0" />
@@ -55,7 +55,7 @@
                   </TextField>
                   <Label prefHeight="17.0" prefWidth="423.0" text="Apellidos">
                      <font>
-                        <Font name="Lato Regular" size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="23.0" />
@@ -63,7 +63,7 @@
                   </Label>
                   <TextField id="Formulario" fx:id="Apellidos" prefHeight="46.0" prefWidth="301.0">
                      <font>
-                        <Font name="Lato Regular" size="12.0" />
+                        <Font name="Arial" size="12.0" />
                      </font>
                      <effect>
                         <DropShadow color="gray" offsetX="0" offsetY="0" />
@@ -74,7 +74,7 @@
                   </TextField>
                   <Label prefHeight="17.0" prefWidth="423.0" text="Teléfono">
                      <font>
-                        <Font name="Lato Regular" size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="23.0" />
@@ -82,7 +82,7 @@
                   </Label>
                   <TextField id="Formulario" fx:id="Telefono" prefHeight="46.0" prefWidth="301.0">
                      <font>
-                        <Font name="Lato Regular" size="12.0" />
+                        <Font name="Arial" size="12.0" />
                      </font>
                      <effect>
                         <DropShadow color="gray" offsetX="0" offsetY="0" />
@@ -93,7 +93,7 @@
                   </TextField>
                   <Label prefHeight="17.0" prefWidth="423.0" text="Contraseña">
                      <font>
-                        <Font name="Lato Regular" size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="23.0" />
@@ -109,7 +109,7 @@
                   </PasswordField>
                   <Label prefHeight="17.0" prefWidth="423.0" text="Confirmar contraseña">
                      <font>
-                        <Font name="Lato Regular" size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="23.0" />
@@ -128,7 +128,7 @@
                         <Insets left="53.0" right="52.0" top="20.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Lato Regular" size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -136,7 +136,7 @@
                   </Button>
                   <Label fx:id="link_volver" onMouseClicked="#linkVolver" text="Volver" textFill="#0ac20a">
                      <font>
-                        <Font name="Lato Regular" size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets left="311.0" right="52.0" top="8.0" />

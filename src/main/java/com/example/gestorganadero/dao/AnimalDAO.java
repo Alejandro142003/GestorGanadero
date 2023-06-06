@@ -44,11 +44,8 @@ public class AnimalDAO implements DAO<Animal> {
                     a.setEdad(res.getInt("Edad"));
                     a.setHijos(res.getInt("NumeroHijos"));
                     a.setLactancia(res.getFloat("Lactancia"));
-                    a.setMadre(res.getInt("CrotalMadre"));
-                    a.setPadre(res.getInt("CrotalPadre"));
                     a.setVacuna(res.getString("Vacuna"));
                     a.setSexo(res.getString("Sexo"));
-                    a.setIdCorral(res.getInt("IdCorral"));
                     result.add(a);
                 }
             }
@@ -72,11 +69,8 @@ public class AnimalDAO implements DAO<Animal> {
                     result.setEdad(res.getInt("Edad"));
                     result.setHijos(res.getInt("NumeroHijos"));
                     result.setLactancia(res.getFloat("Lactancia"));
-                    result.setMadre(res.getInt("Madre"));
-                    result.setPadre(res.getInt("Padre"));
                     result.setVacuna(res.getString("Vacuna"));
                     result.setSexo(res.getString("Sexo"));
-                    result.setIdCorral(res.getInt("IdCorral"));
                 }
             }
         }
@@ -99,11 +93,8 @@ public class AnimalDAO implements DAO<Animal> {
                     pst.setInt(2, entity.getEdad());
                     pst.setInt(3, entity.getHijos());
                     pst.setFloat(4, entity.getLactancia());
-                    pst.setInt(5, entity.getMadre());
-                    pst.setInt(6, entity.getPadre());
-                    pst.setString(7, entity.getVacuna());
-                    pst.setString(8, entity.getSexo());
-                    pst.setInt(8, entity.getIdCorral());
+                    pst.setString(5, entity.getVacuna());
+                    pst.setString(6, entity.getSexo());
                     pst.executeUpdate();
                 }
             }else{
@@ -113,7 +104,6 @@ public class AnimalDAO implements DAO<Animal> {
                     pst.setInt(2, entity.getHijos());
                     pst.setFloat(3, entity.getLactancia());
                     pst.setString(4, entity.getVacuna());
-                    pst.setInt(5,entity.getIdCorral());
                     pst.executeUpdate();
                 }
             }
