@@ -7,6 +7,7 @@ import com.example.gestorganadero.dao.GanaderoDAO;
 import com.example.gestorganadero.domain.Corral;
 import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,6 +18,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,7 +43,7 @@ public class CorralController extends App implements Initializable {
     @FXML
     private Label asociacion;
     @FXML
-    private TableView<Corral> tbCorral;
+    private TableView<Pair<Corral, Ganaderia>> tbCorral;
     @FXML
     private TableColumn<Corral, Integer> colIdCorral;
     @FXML
@@ -57,7 +59,10 @@ public class CorralController extends App implements Initializable {
     private GanaderoDAO gdao;
     private GanaderiaDAO ganaderiadao;
 
+    //Creacion de las observableList para la tabla
     private ObservableList<Corral> listaCorrales;
+    private ObservableList<Ganaderia> listaGanaderias;
+    private ObservableList<Pair<Corral,Ganaderia>> listaCombinada;
 
     /**
      * @param url
@@ -102,31 +107,44 @@ public class CorralController extends App implements Initializable {
         // Establecer nombre y siglas en el label
         asociacion.setText(ganaderia.getNombre() + " " + ganaderia.getSiglas());
 
-        // Crear una ObservableList a partir de la lista de corrales
+        // Crear la ObservableList para los Corrales
         listaCorrales = FXCollections.observableArrayList();
+        List<Corral> auxC = null;
+        try {
+            auxC = adao.findAll();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        listaCorrales.setAll(auxC);
+
+        // Crear la ObservableList para las Ganaderias del ganadero
+        listaGanaderias = FXCollections.observableArrayList();
+        listaGanaderias.setAll(ganaderia);
+
+        // Crear la ObservableList combinada para mostrar en la tabla
+        listaCombinada = FXCollections.observableArrayList();
+        for (int i = 0; i < listaCorrales.size(); i++) {
+            Corral c = listaCorrales.get(i);
+            Ganaderia g = listaGanaderias.get(0);
+            Pair<Corral, Ganaderia> pareja = new Pair<>(c, g);
+            listaCombinada.add(pareja);
+        }
 
         // Configurar la tabla y sus columnas
         colIdCorral.setCellValueFactory(new PropertyValueFactory<>("IdCorral"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
         colTipo.setCellValueFactory(new PropertyValueFactory<>("Tipo"));
         colCenso.setCellValueFactory(new PropertyValueFactory<>("Censo"));
-        colGanaderia.setCellValueFactory(new PropertyValueFactory<>("Ganaderia"));
+        colGanaderia.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGanaderia().getNombre()));
 
         // Asignar la lista de corrales a la tabla
-        List<Corral> aux = null;
-        try {
-            aux = adao.findAll();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        listaCorrales.setAll(aux);
-        tbCorral.setItems(listaCorrales);
+        tbCorral.setItems(listaCombinada);
 
         // Configurar el evento de selección de la tabla
         tbCorral.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 // Actualizar la vista de detalles con los datos del corral seleccionado
-                Corral corralSeleccionado = tbCorral.getSelectionModel().getSelectedItem();
+                Pair<Corral, Ganaderia> corralSeleccionado = tbCorral.getSelectionModel().getSelectedItem();
             }
         });
     }
