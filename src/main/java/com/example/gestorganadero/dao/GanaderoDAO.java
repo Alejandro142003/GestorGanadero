@@ -92,7 +92,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
             if (g == null) {
                 //INSERT
                 try (PreparedStatement pst = this.conn.prepareStatement(INSERT)) {
-                    pst.setInt(1, entity.getIdGanadero());
+                    pst.setInt(1, entity.getIdGanadero());//Puede que sobre al ser  autoincrement
                     pst.setString(2, entity.getDni());
                     pst.setString(3, entity.getNombre());
                     pst.setString(4, entity.getApellidos());
@@ -107,6 +107,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     pst.setString(2, entity.getApellidos());
                     pst.setInt(3, entity.getTelefono());
                     pst.setString(4, entity.getPassword());
+                    pst.setInt(5, entity.getIdGanadero());
                     pst.executeUpdate();
                 }
             }

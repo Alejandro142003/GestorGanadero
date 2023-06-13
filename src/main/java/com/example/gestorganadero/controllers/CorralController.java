@@ -1,7 +1,6 @@
 package com.example.gestorganadero.controllers;
 
 import com.example.gestorganadero.App;
-import com.example.gestorganadero.Utils;
 import com.example.gestorganadero.dao.CorralDAO;
 import com.example.gestorganadero.dao.GanaderiaDAO;
 import com.example.gestorganadero.dao.GanaderoDAO;
@@ -24,7 +23,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
@@ -74,8 +72,9 @@ public class CorralController extends App implements Initializable {
         cdao = new CorralDAO();
         gdao = new GanaderoDAO();
         ganaderiadao = new GanaderiaDAO();
-        String ganaderoId = "1";
+        String ganaderoId = "1"; //Obtener el id mediante algún metodo en el login
         String ganaderiaId = "410600000054";
+
         // Obtener el ganadero
         Ganadero ganadero;
         try {
@@ -83,6 +82,7 @@ public class CorralController extends App implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
         // Obtener la ganaderia
         Ganaderia ganaderia;
         try{

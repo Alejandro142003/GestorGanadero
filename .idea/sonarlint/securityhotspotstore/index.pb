@@ -13,16 +13,10 @@ l
 <src/main/java/com/example/gestorganadero/domain/Persona.java,8\9\899ceab14a9c0dd3e24f1da2e6573e5012ad2482
 p
 @src/main/java/com/example/gestorganadero/domain/Veterinario.java,4\2\42163588410ea852c1876bcfbaf2cee0af28b018
-m
-=src/main/java/com/example/gestorganadero/domain/Ganadero.java,8\4\8456891893fc1e53224f3fad081e34692ab66321
 k
 ;src/main/java/com/example/gestorganadero/domain/Animal.java,7\a\7aeb6a775ce8ba11afb92c684075e02090efb5f9
 k
 ;src/main/java/com/example/gestorganadero/dao/AnimalDAO.java,1\1\1195c7c69e65d31861c21d8d7a517d5d54d7ef53
-
-Qsrc/main/java/com/example/gestorganadero/controllers/EditarUsuarioController.java,0\e\0e69e3b071303621112d8931979095e6d51ee4af
-y
-Isrc/main/java/com/example/gestorganadero/controllers/LoginController.java,a\1\a171ef0e7173148e037dc01731867895d9083c03
 }
 Msrc/main/java/com/example/gestorganadero/controllers/GanaderiaController.java,7\6\76f497a2dabe8fc9354d47f2aa589cbac611a397
 y
@@ -33,3 +27,9 @@ N
 conexion.xml,c\e\cea450a916b0aacd653f63795bba766a27f71026
 x
 Hsrc/main/java/com/example/gestorganadero/connections/ConnectionData.java,2\e\2e81fcf855b3c49a0268a703734098a7251fa782
+z
+Jsrc/main/java/com/example/gestorganadero/controllers/AnimalController.java,b\b\bb23f9b98e0e64c29b661d3c353fb8bd81eb43b4
+n
+>src/main/java/com/example/gestorganadero/domain/Ganaderia.java,1\1\11f6bfe239baa216dc3bbd14d9b1e9145e7f292a
+e
+5src/main/java/com/example/gestorganadero/dao/DAO.java,3\1\31cdecc539fe0476be8aceb9e07c1a4cc1d5776c
