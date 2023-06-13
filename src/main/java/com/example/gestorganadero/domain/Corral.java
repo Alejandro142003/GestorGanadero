@@ -10,6 +10,7 @@ public class Corral {
     private int idCorral;
     private String nombre;
     private String tipo;
+    private String nombreGanaderia;
 
     /*Habría que cambiar el metodo numeroAnimales por un count dentro de animales asociados a cada corral
     * para que saque el número de animales total por corral*/
@@ -25,6 +26,7 @@ public class Corral {
         this.censo = censo;
         this.ganaderia = ganaderia;
         this.animales = animales;
+        this.nombreGanaderia = null;
     }
 
     public Corral() {
@@ -34,6 +36,15 @@ public class Corral {
         this.nombre = "";
         this.tipo = "";
         this.censo = 0;
+        this.nombreGanaderia = "";
+    }
+
+    public String getNombreGanaderia() {
+        return nombreGanaderia;
+    }
+
+    public void setNombreGanaderia(String nombreGanaderia) {
+        this.nombreGanaderia = nombreGanaderia;
     }
 
     public int getIdCorral() {
@@ -103,6 +114,7 @@ public class Corral {
                 "idCorral=" + idCorral +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
+                ", nombreGanaderia='" + nombreGanaderia + '\'' +
                 ", censo=" + censo +
                 ", ganaderia=" + ganaderia +
                 ", animales=" + animales +

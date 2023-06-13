@@ -23,7 +23,13 @@ k
 Qsrc/main/java/com/example/gestorganadero/controllers/EditarUsuarioController.java,0\e\0e69e3b071303621112d8931979095e6d51ee4af
 y
 Isrc/main/java/com/example/gestorganadero/controllers/LoginController.java,a\1\a171ef0e7173148e037dc01731867895d9083c03
-a
-1src/main/java/com/example/gestorganadero/App.java,3\6\3694be0a3ef5337593929cd8a5c7a569d4029620
 }
 Msrc/main/java/com/example/gestorganadero/controllers/GanaderiaController.java,7\6\76f497a2dabe8fc9354d47f2aa589cbac611a397
+N
+src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
+x
+Hsrc/main/java/com/example/gestorganadero/connections/ConnectionData.java,2\e\2e81fcf855b3c49a0268a703734098a7251fa782
+<
+conexion.xml,c\e\cea450a916b0aacd653f63795bba766a27f71026
+y
+Isrc/main/java/com/example/gestorganadero/connections/ConnectionMySQL.java,e\0\e03bbaa9763f128a46d9431a33cd576257cd1084
