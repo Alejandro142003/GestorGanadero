@@ -1,0 +1,9 @@
+
+Œ
+java:S1319"jThe type of "ganaderias" should be an interface such as "List" rather than the implementation "ArrayList".(×õ³éÿÿÿÿÿ8–Êº·‡1
+’
+java:S13190"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(É“Óşÿÿÿÿ8êæ½·‡1
+Œ
+java:S13194"jThe type of "ganaderias" should be an interface such as "List" rather than the implementation "ArrayList".(ï´ˆ“ùÿÿÿÿ8êæ½·‡1
+C
+java:S1481"&Remove this unused "g" local variable.(²Ì€8™Êº·‡1

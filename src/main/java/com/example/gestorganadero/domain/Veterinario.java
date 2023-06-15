@@ -1,5 +1,6 @@
 package com.example.gestorganadero.domain;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -7,20 +8,33 @@ import java.util.Objects;
  * y el metodo toString
  */
 public class Veterinario extends Persona{
-    private int id;
+    private int idVeterinario;
     private String password;
+    private ArrayList<Ganaderia> ganaderias;
 
-    public Veterinario(int id, String password) {
-        this.id = id;
+    public Veterinario(String dni, String nombre, Integer telefono, String apellidos, int idVeterinario, String password, ArrayList<Ganaderia> ganaderias) {
+        super(dni, nombre, telefono, apellidos);
+        this.idVeterinario = idVeterinario;
         this.password = password;
+        this.ganaderias = ganaderias;
     }
 
-    public int getId() {
-        return id;
+    public Veterinario() {
+        ArrayList<Ganaderia> g = null;
+        super.dni = "";
+        super.nombre = "";
+        super.telefono = 0;
+        super.apellidos = "";
+        this.idVeterinario = 0;
+        this.password = "";
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getIdVeterinario() {
+        return idVeterinario;
+    }
+
+    public void setIdVeterinario(int idVeterinario) {
+        this.idVeterinario = idVeterinario;
     }
 
     public String getPassword() {
@@ -31,27 +45,38 @@ public class Veterinario extends Persona{
         this.password = password;
     }
 
+    public ArrayList<Ganaderia> getGanaderias() {
+        return ganaderias;
+    }
+
+    public void setGanaderias(ArrayList<Ganaderia> ganaderias) {
+        this.ganaderias = ganaderias;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Veterinario that = (Veterinario) o;
-        return id == that.id;
+        return idVeterinario == that.idVeterinario;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(super.hashCode(), idVeterinario);
     }
 
     @Override
     public String toString() {
         return "Veterinario{" +
-                "id=" + id +
+                "idVeterinario=" + idVeterinario +
                 ", password='" + password + '\'' +
+                ", ganaderias=" + ganaderias +
+                ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", Apellidos='" + apellidos + '\'' +
+                ", telefono=" + telefono +
+                ", apellidos='" + apellidos + '\'' +
                 '}';
     }
 }

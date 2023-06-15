@@ -20,6 +20,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
     private final static String INSERT ="INSERT INTO ganadero (IdGanadero,Dni,Nombre,Apellidos,Telefono,REGA,Password) VALUES (?,?,?,?,?,?,?)";
     private final static String UPDATE ="UPDATE ganadero SET nombre=?, apellidos=?, Telefono=?, Password=? WHERE IdGanadero=?";
     private final static String DELETE = "DELETE FROM ganadero WHERE IdGanadero=?";
+    private final static String LOGIN = "SELECT * FROM ganadero WHERE BINARY nombre=? AND Password=?";
 
     private Connection conn;
 
@@ -48,7 +49,6 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     g.setNombre(res.getString("Nombre"));
                     g.setApellidos(res.getString("Apellidos"));
                     g.setTelefono(res.getInt("Telefono"));
-                    g.setGanaderias((ArrayList<Ganaderia>) res.getArray("ganaderias"));
                     g.setPassword(res.getString("Password"));
                     result.add(g);
                 }
@@ -74,12 +74,30 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     result.setNombre(res.getString("Nombre"));
                     result.setApellidos(res.getString("Apellidos"));
                     result.setTelefono(res.getInt("Telefono"));
-                    result.setREGA(res.getString("REGA"));
                     result.setPassword(res.getString("Password"));
                 }
             }
         }
         return result;
+    }
+
+    public int login(String user, String passwd) {
+        int state = -1;
+
+        try(PreparedStatement pst=this.conn.prepareStatement(LOGIN)){
+            pst.setString(1, user);
+            pst.setString(2, passwd);
+            try(ResultSet res = pst.executeQuery()){
+                if(res.next()){
+                    state = 1;
+                }else {
+                    state = 0;
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return state;
     }
 
     /**
@@ -94,13 +112,12 @@ public class GanaderoDAO implements DAO<Ganadero> {
             if (g == null) {
                 //INSERT
                 try (PreparedStatement pst = this.conn.prepareStatement(INSERT)) {
-                    pst.setInt(1, entity.getIdGanadero());
+                    pst.setInt(1, entity.getIdGanadero());//Puede que sobre al ser  autoincrement
                     pst.setString(2, entity.getDni());
                     pst.setString(3, entity.getNombre());
                     pst.setString(4, entity.getApellidos());
                     pst.setInt(5, entity.getTelefono());
-                    pst.setString(6, entity.getREGA());
-                    pst.setString(7, entity.getPassword());
+                    pst.setString(6, entity.getPassword());
                     pst.executeUpdate();
                 }
             }else{
@@ -110,6 +127,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
                     pst.setString(2, entity.getApellidos());
                     pst.setInt(3, entity.getTelefono());
                     pst.setString(4, entity.getPassword());
+                    pst.setInt(5, entity.getIdGanadero());
                     pst.executeUpdate();
                 }
             }
@@ -129,6 +147,19 @@ public class GanaderoDAO implements DAO<Ganadero> {
                 pst.executeUpdate();
             }
         }
+    }
+
+    private GanaderiaDAO ganaderiadao;
+    public List<Ganaderia>findGanaderias(Ganadero g) throws SQLException {
+        ganaderiadao = new GanaderiaDAO();
+        List<Ganaderia> ganaderias = ganaderiadao.findAll();
+        List<Ganaderia> misGanaderias = null;
+        for (Ganaderia ganaderia:ganaderias) {
+            if (g == ganaderia.getOwner()){
+                misGanaderias.add(ganaderia);
+            }
+        }
+        return  misGanaderias;
     }
 
     public void close() throws Exception {

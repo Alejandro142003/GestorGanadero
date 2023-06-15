@@ -20,7 +20,13 @@ public class Ganadero extends Persona{
     }
 
     public Ganadero() {
-        this("","",0,"",0,"",ganaderias);
+        ArrayList<Ganaderia> g = null;
+        super.dni = "";
+        super.nombre = "";
+        super.telefono = 0;
+        super.apellidos = "";
+        this.idGanadero = 0;
+        this.password = "";
     }
 
     public int getIdGanadero() {

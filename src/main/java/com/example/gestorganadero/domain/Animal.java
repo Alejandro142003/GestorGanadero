@@ -29,7 +29,19 @@ public class Animal {
     }
 
     public Animal(){
-        this(0,madre,padre,0.0,"",0,0,"",corral);
+        //Objetos y arraylist en null se setearan en los DAO a su correspondiente en la base de datos
+        Animal m = null;
+        Animal p = null;
+        Corral c = null;
+        this.crotal = 0;
+        this.lactancia = 0;
+        this.vacuna = "";
+        this.edad = 0;
+        this.hijos = 0;
+        this.sexo = "";
+        this.madre = m;
+        this.padre = p;
+        this.corral = c;
     }
 
     public int getCrotal() {

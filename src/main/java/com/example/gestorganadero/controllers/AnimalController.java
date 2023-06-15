@@ -4,6 +4,7 @@ import com.example.gestorganadero.App;
 import com.example.gestorganadero.dao.AnimalDAO;
 import com.example.gestorganadero.dao.GanaderiaDAO;
 import com.example.gestorganadero.dao.GanaderoDAO;
+import com.example.gestorganadero.domain.Animal;
 import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
 import javafx.collections.FXCollections;
@@ -40,38 +41,38 @@ public class AnimalController extends App implements Initializable {
     @FXML
     private Label asociacion;
     @FXML
-    private TableView<com.example.gestorganadero.domain.Animal> tbAnimal;
+    private TableView<Animal> tbAnimal;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCrotal;
+    private TableColumn<Animal, Integer> colCrotal;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colEdad;
+    private TableColumn<Animal, Integer> colEdad;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, String> colVacuna;
+    private TableColumn<Animal, String> colVacuna;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Float> colLactancia;
+    private TableColumn<Animal, Float> colLactancia;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colNumeroHijos;
+    private TableColumn<Animal, Integer> colNumeroHijos;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCrotalMadre;
+    private TableColumn<Animal, Integer> colCrotalMadre;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCrotalPadre;
+    private TableColumn<Animal, Integer> colCrotalPadre;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colSexo;
+    private TableColumn<Animal, Integer> colSexo;
 
     @FXML
-    private TableColumn<com.example.gestorganadero.domain.Animal, Integer> colCorral;
+    private TableColumn<Animal, Integer> colCorral;
 
 
 
-    private ObservableList<com.example.gestorganadero.domain.Animal> listaAnimales;
+    private ObservableList<Animal> listaAnimales;
 
     /**
      * @param url
@@ -124,7 +125,7 @@ public class AnimalController extends App implements Initializable {
         colCorral.setCellValueFactory(new PropertyValueFactory<>("IdCorral"));
 
         // Asignar la lista de animales a la tabla
-        List<com.example.gestorganadero.domain.Animal> aux = null;
+        List<Animal> aux = null;
         try {
             aux = adao.findAll();
         } catch (SQLException e) {
@@ -137,7 +138,7 @@ public class AnimalController extends App implements Initializable {
         tbAnimal.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 // Actualizar la vista de detalles con los datos del animal seleccionado
-                com.example.gestorganadero.domain.Animal animalSeleccionado = tbAnimal.getSelectionModel().getSelectedItem();
+                Animal animalSeleccionado = tbAnimal.getSelectionModel().getSelectedItem();
             }
         });
     }
