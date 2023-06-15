@@ -29,7 +29,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="423.0">
+                  <Label fx:id="labelError" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="423.0">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <Insets left="53.0" right="52.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Nombre" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="nombre" prefHeight="46.0" prefWidth="301.0">
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="11.0" />
                      </VBox.margin>
@@ -64,7 +64,7 @@
                         <Insets left="53.0" right="52.0" top="23.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Apellidos" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="apellidos" prefHeight="46.0" prefWidth="301.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
@@ -83,7 +83,7 @@
                         <Insets left="53.0" right="52.0" top="23.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Telefono" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="telefono" prefHeight="46.0" prefWidth="301.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>

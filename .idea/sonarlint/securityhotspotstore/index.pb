@@ -33,3 +33,5 @@ n
 >src/main/java/com/example/gestorganadero/domain/Ganaderia.java,1\1\11f6bfe239baa216dc3bbd14d9b1e9145e7f292a
 e
 5src/main/java/com/example/gestorganadero/dao/DAO.java,3\1\31cdecc539fe0476be8aceb9e07c1a4cc1d5776c
+z
+Jsrc/main/java/com/example/gestorganadero/controllers/CorralController.java,8\4\8411fc3b5f7d8b8fd9caf80719135591bd023513

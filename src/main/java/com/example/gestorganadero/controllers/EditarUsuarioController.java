@@ -21,11 +21,11 @@ import java.util.ResourceBundle;
  */
 public class EditarUsuarioController extends App implements Initializable {
     @FXML
-    private TextField Nombre;
+    private TextField nombre;
     @FXML
-    private TextField Apellidos;
+    private TextField apellidos;
     @FXML
-    private TextField Telefono;
+    private TextField telefono;
     @FXML
     private PasswordField passwd;
     @FXML
@@ -53,11 +53,9 @@ public class EditarUsuarioController extends App implements Initializable {
         }
 
         //Mostrar los datos del usuario
-        Nombre.setText(ganadero.getNombre());
-        Apellidos.setText(ganadero.getApellidos());
-        Telefono.setText(String.valueOf(ganadero.getTelefono()));
-        passwd.setText(ganadero.getPassword());
-        passwdconf.setText(ganadero.getPassword());
+        nombre.setText(ganadero.getNombre());
+        apellidos.setText(ganadero.getApellidos());
+        telefono.setText(String.valueOf(ganadero.getTelefono()));
     }
 
     /**
@@ -66,20 +64,38 @@ public class EditarUsuarioController extends App implements Initializable {
      */
     @FXML
     private void btnSave() throws IOException {
-        if (passwd.getText().equals(passwdconf.getText()) && passwdconf.getText().equals(passwd.getText())){
-            ganadero.setNombre(Nombre.getText());
-            ganadero.setApellidos(Apellidos.getText());
-            ganadero.setTelefono(Integer.parseInt(Telefono.getText()));
-            ganadero.setPassword(passwd.getText());
-            try {
-                gdao.save(ganadero);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            App.setRoot("ganaderia");
-        } else {
-            labelError.setText("Las contraseñas no coinciden");
+        if (nombre.getText().isEmpty() || apellidos.getText().isEmpty() || telefono.getText().isEmpty()){
+            labelError.setText("Se deben completar todos los campos");
             labelError.setTextFill(Color.RED);
+        }else {
+            if (passwd.getText().isEmpty() && passwdconf.getText().isEmpty()) {
+                ganadero.setNombre(nombre.getText());
+                ganadero.setApellidos(apellidos.getText());
+                ganadero.setTelefono(Integer.parseInt(telefono.getText()));
+                ganadero.setPassword(ganadero.getPassword());
+                try {
+                    gdao.save(ganadero);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                App.setRoot("ganaderia");
+            } else {
+                if (passwd.getText().equals(passwdconf.getText()) && passwdconf.getText().equals(passwd.getText())) {
+                    ganadero.setNombre(nombre.getText());
+                    ganadero.setApellidos(apellidos.getText());
+                    ganadero.setTelefono(Integer.parseInt(telefono.getText()));
+                    ganadero.setPassword(passwd.getText());
+                    try {
+                        gdao.save(ganadero);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    App.setRoot("ganaderia");
+                } else {
+                    labelError.setText("Las contraseñas no coinciden");
+                    labelError.setTextFill(Color.RED);
+                }
+            }
         }
     }
 
