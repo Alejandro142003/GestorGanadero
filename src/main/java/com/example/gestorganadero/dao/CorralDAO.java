@@ -17,7 +17,7 @@ import java.util.List;
 public class CorralDAO implements DAO<Corral> {
     private final static String FINDALL ="SELECT * from corral";
     private final static String FINBYID ="SELECT * from corral WHERE IdCorral=?";
-    private final static String INSERT ="INSERT INTO corral (IdCorral,Nombre,Tipo,Censo) VALUES (?,?,?,?)";
+    private final static String INSERT ="INSERT INTO corral (IdCorral,Nombre,Tipo,Censo,Rega) VALUES (?,?,?,?,?)";
     private final static String UPDATE ="UPDATE corral SET Nombre=?, Tipo=?, Censo=? WHERE IdCorral=?";
     private final static String DELETE = "DELETE FROM corral WHERE IdCorral=?";
 
@@ -93,6 +93,7 @@ public class CorralDAO implements DAO<Corral> {
                     pst.setString(2, entity.getNombre());
                     pst.setString(3, entity.getTipo());
                     pst.setInt(4, entity.getCenso());
+                    pst.setString(5, entity.getGanaderia().getRega());
                     pst.executeUpdate();
                 }
             }else{

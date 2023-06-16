@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/editAnimal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.EditarUsuarioController">
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/editAnimal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.EditarCorralController">
    <children>
       <Pane id="Panel" layoutX="720.0" layoutY="216.0" prefHeight="467.0" prefWidth="402.0">
          <children>
@@ -89,7 +89,7 @@
                         <Insets left="53.0" right="52.0" top="11.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button id="Boton" fx:id="btnSave" alignment="CENTER" mnemonicParsing="false" onAction="#btnLoginValidate" prefHeight="54.0" prefWidth="301.0" text="Guardar cambios" textFill="WHITE">
+                  <Button id="Boton" fx:id="btnSave" alignment="CENTER" mnemonicParsing="false" onAction="#btnSave" prefHeight="54.0" prefWidth="301.0" text="Guardar cambios" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="20.0" />
                      </VBox.margin>

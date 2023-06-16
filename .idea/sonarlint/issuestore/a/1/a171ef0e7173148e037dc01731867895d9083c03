@@ -1,0 +1,6 @@
+
+g	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8şŒÑŞ‹1
+z
+java:S1450#"XRemove the "ganaderos" field and declare it as a local variable in the relevant methods.(„§À§ûÿÿÿÿ8“ÑŞ‹1
+O
+java:S1068#"-Remove this unused "ganaderos" private field.(„§À§ûÿÿÿÿ8˜ÑŞ‹1

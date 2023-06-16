@@ -4,6 +4,7 @@ import com.example.gestorganadero.App;
 import com.example.gestorganadero.dao.CorralDAO;
 import com.example.gestorganadero.dao.GanaderiaDAO;
 import com.example.gestorganadero.dao.GanaderoDAO;
+import com.example.gestorganadero.domain.Animal;
 import com.example.gestorganadero.domain.Corral;
 import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
@@ -38,6 +39,12 @@ public class CorralController extends App implements Initializable {
     @FXML
     private Label link_editar;
     @FXML
+    private Label editarCorral;
+    @FXML
+    private Label addCorral;
+    @FXML
+    private Label eliminarCorral;
+    @FXML
     private Label username;
     @FXML
     private Label asociacion;
@@ -58,6 +65,8 @@ public class CorralController extends App implements Initializable {
     private GanaderoDAO gdao;
     private GanaderiaDAO ganaderiadao;
 
+
+
     //Creacion de las observableList para la tabla
     private ObservableList<Corral> listaCorrales;
 
@@ -73,7 +82,7 @@ public class CorralController extends App implements Initializable {
         gdao = new GanaderoDAO();
         ganaderiadao = new GanaderiaDAO();
         String ganaderoId = "1"; //Obtener el id mediante algún metodo en el login
-        String ganaderiaId = "410600000054";
+        String ganaderiaId = "410600000054"; //Obtener el id mediante algún metodo en el login
 
         // Obtener el ganadero
         Ganadero ganadero;
@@ -168,5 +177,24 @@ public class CorralController extends App implements Initializable {
     @FXML
     private void btnAnimal() throws IOException {
         App.setRoot("animal");
+    }
+
+    @FXML public void addCorral() throws IOException{
+        App.setRoot("addCorral");
+    }
+
+    @FXML
+    public void editCorral() throws IOException {
+        Corral selectedItem = tbCorral.getSelectionModel().getSelectedItem();
+
+         //Abrir edtiarCorralController con paso de parámetro
+        App.setRootWithParams("editarCorral", selectedItem);
+    }
+
+    @FXML
+    public void deleteCorral() throws IOException, SQLException {
+        Corral selectedItem = tbCorral.getSelectionModel().getSelectedItem();
+        cdao.delete(selectedItem);
+        App.setRoot("corral");
     }
 }
