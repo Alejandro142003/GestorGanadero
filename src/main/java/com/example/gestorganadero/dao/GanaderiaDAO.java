@@ -20,6 +20,7 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
     private final static String INSERT ="INSERT INTO ganaderia (REGA,Nombre,Siglas,Localidad,Provincia,Titular,CensoTotal,SistemaExplotacion,Age) VALUES (?,?,?,?,?,?,?,?,?)";
     private final static String UPDATE ="UPDATE ganaderia SET Nombre=?,Siglas=?,Localidad=?,Provincia=?,Titular=?,CensoTotal=?,SistemaExplotacion=?,Age=? WHERE REGA=?";
     private final static String DELETE = "DELETE FROM ganaderoA WHERE crotal=?";
+    private final static String ID = "SELECT REGA FROM ganaderia WHERE IdGanadero=?";
 
 
     private Connection conn;
@@ -82,6 +83,21 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
             }
         }
         return result;
+    }
+
+    public String obtenerId(String idGanadero) {
+        String id = null;
+        try(PreparedStatement pst=this.conn.prepareStatement(ID)){
+            pst.setString(1, idGanadero);
+            try(ResultSet res = pst.executeQuery()){
+                if(res.next()){
+                    id = res.getString("REGA");
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return id;
     }
 
     /**

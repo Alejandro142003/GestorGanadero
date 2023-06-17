@@ -75,7 +75,6 @@ public class EditarCorralController extends App implements Initializable,IContro
         App.setRoot("corral");
     }
 
-
    /* @FXML
     private void btnSave() throws IOException {
         if (nombre.getText().isEmpty() || apellidos.getText().isEmpty() || telefono.getText().isEmpty()){
