@@ -13,7 +13,7 @@ public class Corral {
     private String nombreGanaderia;
 
     /*Habría que cambiar el metodo numeroAnimales por un count dentro de animales asociados a cada corral
-    * para que saque el número de animales total por corral*/
+     * para que saque el número de animales total por corral*/
     private int censo;
 
     private Ganaderia ganaderia;
@@ -121,4 +121,3 @@ public class Corral {
                 '}';
     }
 }
-

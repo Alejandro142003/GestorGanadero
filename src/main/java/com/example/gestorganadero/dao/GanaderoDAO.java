@@ -21,6 +21,7 @@ public class GanaderoDAO implements DAO<Ganadero> {
     private final static String UPDATE ="UPDATE ganadero SET nombre=?, apellidos=?, Telefono=?, Password=? WHERE IdGanadero=?";
     private final static String DELETE = "DELETE FROM ganadero WHERE IdGanadero=?";
     private final static String LOGIN = "SELECT * FROM ganadero WHERE BINARY nombre=? AND Password=?";
+    private final static String ID = "SELECT IdGanadero FROM ganadero WHERE nombre=? AND Password=?";
 
     private Connection conn;
 
@@ -79,6 +80,22 @@ public class GanaderoDAO implements DAO<Ganadero> {
             }
         }
         return result;
+    }
+
+    public String obtenerId(String user, String passwd){
+        String id = null;
+        try(PreparedStatement pst=this.conn.prepareStatement(ID)){
+            pst.setString(1, user);
+            pst.setString(2, passwd);
+            try(ResultSet res = pst.executeQuery()){
+                if(res.next()){
+                    id = res.getString("idGanadero");
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return id;
     }
 
     public int login(String user, String passwd) {

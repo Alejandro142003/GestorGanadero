@@ -3,6 +3,7 @@ package com.example.gestorganadero.controllers;
 import com.example.gestorganadero.App;
 import com.example.gestorganadero.dao.GanaderiaDAO;
 import com.example.gestorganadero.dao.GanaderoDAO;
+import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,8 +33,10 @@ public class GanaderiaController extends App implements Initializable {
     @FXML
     private Label asociacion;
 
-    private GanaderoDAO gdao;
     private GanaderiaDAO ganaderiadao;
+    private LoginController loginController = new LoginController();
+    private Ganadero currentUser = loginController.getCurrentUser();
+    private Ganaderia currentEntity = loginController.getCurrentEntity();
 
     /**
      * @param url
@@ -43,18 +46,8 @@ public class GanaderiaController extends App implements Initializable {
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Lógica de inicialización del controlador
-        gdao = new GanaderoDAO();
         ganaderiadao = new GanaderiaDAO();
-        String ganaderoId = "1";
-        String ganaderiaId = "410600000054";
-
-        // Obtener el ganadero
-        Ganadero ganadero;
-        try {
-            ganadero = gdao.findById(ganaderoId);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        String ganaderiaId = currentEntity.getRega();
 
         // Obtener la ganaderia
         com.example.gestorganadero.domain.Ganaderia ganaderia;
@@ -65,10 +58,10 @@ public class GanaderiaController extends App implements Initializable {
         }
 
         // Establecer nombre y usuarios en el label
-        username.setText(ganadero.getNombre() + " " + ganadero.getApellidos());
+        username.setText(currentUser.getNombre() + " " + currentUser.getApellidos());
 
         // Establecer nombre y siglas en el label
-        asociacion.setText(ganaderia.getNombre() + " " + ganaderia.getSiglas());
+        asociacion.setText(currentEntity.getNombre() + " " + currentEntity.getSiglas());
     }
 
     /**

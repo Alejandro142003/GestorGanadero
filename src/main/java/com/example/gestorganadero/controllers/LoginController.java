@@ -1,7 +1,9 @@
 package com.example.gestorganadero.controllers;
 
 import com.example.gestorganadero.App;
+import com.example.gestorganadero.dao.GanaderiaDAO;
 import com.example.gestorganadero.dao.GanaderoDAO;
+import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,19 +26,29 @@ public class LoginController extends App implements Initializable {
 
     @FXML
     private Label labelError;
-
     @FXML
     private TextField userField;
-
     @FXML
     private PasswordField passField;
 
+    private GanaderiaDAO ganaderiadao;
     private GanaderoDAO gdao;
     private List<Ganadero> ganaderos = null;
+    public static Ganadero currentUser = new Ganadero();
+    public static Ganaderia currentEntity = new Ganaderia();
+
+    public Ganadero getCurrentUser() {
+        return currentUser;
+    }
+
+    public static Ganaderia getCurrentEntity() {
+        return currentEntity;
+    }
 
     public void initialize(URL url, ResourceBundle resourceBundle){
         //Logica de inicialización del controlador
         gdao = new GanaderoDAO();
+        ganaderiadao = new GanaderiaDAO();
 
         //Obtener todos los ganaderos
         try{
@@ -44,9 +56,6 @@ public class LoginController extends App implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        //Obtener la lista de los nombres de todos los ganaderos
-
     }
 
     /**
@@ -55,7 +64,7 @@ public class LoginController extends App implements Initializable {
      * @throws IOException
      */
     @FXML
-    private void btnLoginValidate() throws IOException { //Controlador de usuario y contraseña
+    private void btnLoginValidate() throws IOException, SQLException { //Controlador de usuario y contraseña
         if (userField.getText().isEmpty() || passField.getText().isEmpty()) {
             labelError.setText("Se deben de completar todos los campos");
             labelError.setTextFill(Color.RED);
@@ -64,9 +73,14 @@ public class LoginController extends App implements Initializable {
             String passwd = passField.getText();
 
             int state = gdao.login(user,passwd);
+            String idGanadero = gdao.obtenerId(user,passwd);
+            String idGanaderia = ganaderiadao.obtenerId(idGanadero);
 
             if(state != -1){
                 if (state == 1){
+                    currentUser = gdao.findById(idGanadero);
+                    currentEntity = ganaderiadao.findById(idGanaderia);
+
                     App.setRoot("ganaderia");//Datos correctos se puede acceder al sistema
                 } else {
                     labelError.setText("¡Usuario o contraseña invalidos!");
@@ -74,20 +88,5 @@ public class LoginController extends App implements Initializable {
                 }
             }
         }
-
-        /*else{
-            if (userField.getText().equals("admin") && passField.getText().equals("admin")){
-                labelError.setText("¡Usuario y contraseñas correctos!");
-                labelError.setTextFill(Color.GREEN);
-                App.setRoot("ganaderia");
-            }else {
-                if (userField.getText().equals("user") && passField.getText().equals("user")){
-                    App.setRoot("veterinaria");
-                } else {
-                    labelError.setText("¡Usuario o contraseña invalidos!");
-                    labelError.setTextFill(Color.RED);
-                }
-            }
-        }*/
     }
 }
