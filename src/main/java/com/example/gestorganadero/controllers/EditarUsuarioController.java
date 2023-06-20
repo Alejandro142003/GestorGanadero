@@ -39,11 +39,13 @@ public class EditarUsuarioController extends App implements Initializable {
 
     private GanaderoDAO gdao;
     private Ganadero ganadero = new Ganadero();
+    private LoginController loginController = new LoginController();
+    private Ganadero currentUser = loginController.getCurrentUser();
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Lógica de inicialización del controlador
         gdao = new GanaderoDAO();
-        String ganaderoId = "1";
+        String ganaderoId = String.valueOf(currentUser.getIdGanadero());
 
         // Obtener el ganadero
         try {

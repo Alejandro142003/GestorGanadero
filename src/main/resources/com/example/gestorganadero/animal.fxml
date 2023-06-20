@@ -176,6 +176,9 @@
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Label>
                               <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#deleteAnimal" text="Eliminar" textFill="#0ac20a">
                                  <font>
@@ -184,6 +187,9 @@
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
                               </Label>
                               <Label alignment="CENTER" prefHeight="23.0" prefWidth="846.0" text="Animales" textFill="#0ac20a">
                                  <font>

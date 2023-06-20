@@ -39,7 +39,6 @@ public class AddAnimalController extends App {
     private Button btnSave;
 
     private AnimalDAO adao;
-    private CorralDAO cdao;
 
     @FXML
     private void btnSave() throws IOException {
@@ -62,5 +61,10 @@ public class AddAnimalController extends App {
             animal.setSexo(sexo.getText());
             //animal.setCorral(corral.getText());
         }
+    }
+
+    @FXML
+    private void  linkVolver() throws IOException {
+        App.setRoot("animal");
     }
 }

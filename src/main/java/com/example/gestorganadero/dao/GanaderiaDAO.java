@@ -19,7 +19,7 @@ public class GanaderiaDAO implements DAO<Ganaderia>{
     private final static String FINBYID ="SELECT * from ganaderia WHERE REGA=?";
     private final static String INSERT ="INSERT INTO ganaderia (REGA,Nombre,Siglas,Localidad,Provincia,Titular,CensoTotal,SistemaExplotacion,Age) VALUES (?,?,?,?,?,?,?,?,?)";
     private final static String UPDATE ="UPDATE ganaderia SET Nombre=?,Siglas=?,Localidad=?,Provincia=?,Titular=?,CensoTotal=?,SistemaExplotacion=?,Age=? WHERE REGA=?";
-    private final static String DELETE = "DELETE FROM ganaderoA WHERE crotal=?";
+    private final static String DELETE = "DELETE FROM ganaderia WHERE crotal=?";
     private final static String ID = "SELECT REGA FROM ganaderia WHERE IdGanadero=?";
 
 
