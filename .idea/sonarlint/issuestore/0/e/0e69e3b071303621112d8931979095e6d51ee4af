@@ -1,8 +1,0 @@
-
-g	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ñ²ÚØ‹1
-g	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ò²ÚØ‹1
-g	java:S112["FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ó²ÚØ‹1
-o	java:S116""SRename this field "btn_save" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ˆ¢ø8ñ²ÚØ‹1
-w	java:S116$"VRename this field "link_volver" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íè·©úÿÿÿÿ8ñ²ÚØ‹1
-t
-java:S3776B"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(”…˜ÿÿÿÿÿ8ø²ÚØ‹1

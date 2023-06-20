@@ -52,9 +52,11 @@ public class App extends Application {
 
     public static void setRootWithParams(String fxml, Object param) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        Parent p = fxmlLoader.load();
         IController c = fxmlLoader.getController();
         c.setParam(param);
-        scene.setRoot(loadFXML(fxml));
+        c.start();
+        scene.setRoot(p);
     }
 
     /**\

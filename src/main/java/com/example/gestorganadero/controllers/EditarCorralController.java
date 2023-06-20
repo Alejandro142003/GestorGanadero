@@ -25,19 +25,9 @@ public class EditarCorralController extends App implements Initializable,IContro
     @FXML
     private TextField nombre;
     @FXML
-    private TextField apellidos;
+    private TextField tipo;
     @FXML
-    private TextField telefono;
-    @FXML
-    private PasswordField passwd;
-    @FXML
-    private PasswordField passwdconf;
-    @FXML
-    private Button btn_save;
-    @FXML
-    private Label link_volver;
-    @FXML
-    private Label labelError;
+    private TextField censo;
 
     private CorralDAO cdao;
     private Corral corralSeleccionado = null;
@@ -45,25 +35,27 @@ public class EditarCorralController extends App implements Initializable,IContro
 
     @Override
     public void setParam(Object o) {
-        this.corralSeleccionado = (Corral)o;
+        this.corralSeleccionado = (Corral) o;
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Lógica de inicialización del controlador
+    }
+
+    public void start(){
         cdao = new CorralDAO();
-        String corralId = String.valueOf(corralSeleccionado.getIdCorral()); //Buscar forma de obtener el Id
-
-        // Obtener el corral
-        try {
-            corral = cdao.findById(corralId);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        if (corralSeleccionado != null) {
+            //Mostrar los datos del corral
+            nombre.setText(corralSeleccionado.getNombre());
+            tipo.setText(corralSeleccionado.getTipo());
+            censo.setText(String.valueOf(corralSeleccionado.getCenso()));
+            //Obtener el corral
+            String idCorral = String.valueOf(corralSeleccionado.getIdCorral());
+            try {
+                corral = cdao.findById(idCorral);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
-
-        //Mostrar los datos del corral
-        nombre.setText(corralSeleccionado.getNombre());
-        apellidos.setText(corralSeleccionado.getTipo());
-        telefono.setText(String.valueOf(corralSeleccionado.getCenso()));
     }
 
     /**
@@ -71,45 +63,12 @@ public class EditarCorralController extends App implements Initializable,IContro
      * @throws IOException
      */
     @FXML
-    private void btnSave() throws IOException {
+    private void btnSave() throws IOException, SQLException {
+        corral.setNombre(nombre.getText());
+        corral.setTipo(tipo.getText());
+        corral.setCenso(Integer.parseInt(censo.getText()));
+        cdao.save(corral);
         App.setRoot("corral");
-    }
-
-   /* @FXML
-    private void btnSave() throws IOException {
-        if (nombre.getText().isEmpty() || apellidos.getText().isEmpty() || telefono.getText().isEmpty()){
-            labelError.setText("Se deben completar todos los campos");
-            labelError.setTextFill(Color.RED);
-        }else {
-            if (passwd.getText().isEmpty() && passwdconf.getText().isEmpty()) {
-                ganadero.setNombre(nombre.getText());
-                ganadero.setApellidos(apellidos.getText());
-                ganadero.setTelefono(Integer.parseInt(telefono.getText()));
-                ganadero.setPassword(ganadero.getPassword());
-                try {
-                    gdao.save(ganadero);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                App.setRoot("ganaderia");
-            } else {
-                if (passwd.getText().equals(passwdconf.getText()) && passwdconf.getText().equals(passwd.getText())) {
-                    ganadero.setNombre(nombre.getText());
-                    ganadero.setApellidos(apellidos.getText());
-                    ganadero.setTelefono(Integer.parseInt(telefono.getText()));
-                    ganadero.setPassword(passwd.getText());
-                    try {
-                        gdao.save(ganadero);
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
-                    App.setRoot("ganaderia");
-                } else {
-                    labelError.setText("Las contraseñas no coinciden");
-                    labelError.setTextFill(Color.RED);
-                }
-            }
-        }
     }
 
     /**
@@ -118,6 +77,6 @@ public class EditarCorralController extends App implements Initializable,IContro
      */
     @FXML
     private void linkVolver() throws IOException {
-        App.setRoot("ganaderia");
+        App.setRoot("corral");
     }
 }

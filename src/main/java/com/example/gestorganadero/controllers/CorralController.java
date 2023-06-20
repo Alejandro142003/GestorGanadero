@@ -4,7 +4,6 @@ import com.example.gestorganadero.App;
 import com.example.gestorganadero.dao.CorralDAO;
 import com.example.gestorganadero.dao.GanaderiaDAO;
 import com.example.gestorganadero.dao.GanaderoDAO;
-import com.example.gestorganadero.domain.Animal;
 import com.example.gestorganadero.domain.Corral;
 import com.example.gestorganadero.domain.Ganaderia;
 import com.example.gestorganadero.domain.Ganadero;
@@ -12,12 +11,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,20 +27,6 @@ import java.util.ResourceBundle;
  * Clase controlador de corral que extiende App e implementa Initializable
  */
 public class CorralController extends App implements Initializable {
-    @FXML
-    private Pane btn_ganaderia;
-    @FXML
-    private Pane btn_animal;
-    @FXML
-    private Button btn_logout;
-    @FXML
-    private Label link_editar;
-    @FXML
-    private Label editarCorral;
-    @FXML
-    private Label addCorral;
-    @FXML
-    private Label eliminarCorral;
     @FXML
     private Label username;
     @FXML
@@ -62,10 +45,10 @@ public class CorralController extends App implements Initializable {
     private TableColumn<Ganaderia, String> colGanaderia;
 
     private CorralDAO cdao;
+    private LoginController loginController = new LoginController();
     private GanaderoDAO gdao;
-    private GanaderiaDAO ganaderiadao;
-
-
+    private Ganadero currentUser = loginController.getCurrentUser();
+    private Ganaderia currentEntity = loginController.getCurrentEntity();
 
     //Creacion de las observableList para la tabla
     private ObservableList<Corral> listaCorrales;
@@ -80,38 +63,19 @@ public class CorralController extends App implements Initializable {
         // Lógica de inicialización del controlador
         cdao = new CorralDAO();
         gdao = new GanaderoDAO();
-        ganaderiadao = new GanaderiaDAO();
-        String ganaderoId = "1"; //Obtener el id mediante algún metodo en el login
-        String ganaderiaId = "410600000054"; //Obtener el id mediante algún metodo en el login
-
-        // Obtener el ganadero
-        Ganadero ganadero;
-        try {
-            ganadero = gdao.findById(ganaderoId);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        // Obtener la ganaderia
-        Ganaderia ganaderia;
-        try{
-            ganaderia = ganaderiadao.findById(ganaderiaId);
-        } catch (SQLException e){
-            throw new RuntimeException(e);
-        }
 
         //Obtener lista de ganaderias del ganadero
         try {
-            List<Ganaderia> ganaderias = gdao.findGanaderias(ganadero);
+            List<Ganaderia> ganaderias = gdao.findGanaderias(currentUser);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
         // Establecer nombre y usuarios en el label
-        username.setText(ganadero.getNombre() + " " + ganadero.getApellidos());
+        username.setText(currentUser.getNombre() + " " + currentUser.getApellidos());
 
         // Establecer nombre y siglas en el label
-        asociacion.setText(ganaderia.getNombre() + " " + ganaderia.getSiglas());
+        asociacion.setText(currentEntity.getNombre() + " " + currentEntity.getSiglas());
 
         // Crear una ObservableList a partir de la lista de corrales
         listaCorrales = FXCollections.observableArrayList();
@@ -125,7 +89,6 @@ public class CorralController extends App implements Initializable {
 
         // Asignar la lista de corrales a la tabla
         List<Corral> aux = new ArrayList<>();
-        List<Ganaderia> aux2 = new ArrayList<>();
         try {
             aux = cdao.findAll(); //Ver como añdir la ganaderia aquí para hacer un ganaderia.getNombre
         } catch (SQLException e) {
@@ -185,10 +148,12 @@ public class CorralController extends App implements Initializable {
 
     @FXML
     public void editCorral() throws IOException {
-        Corral selectedItem = tbCorral.getSelectionModel().getSelectedItem();
+         Corral selectedItem = tbCorral.getSelectionModel().getSelectedItem();
 
-         //Abrir edtiarCorralController con paso de parámetro
-        App.setRootWithParams("editarCorral", selectedItem);
+         if (selectedItem != null) {
+             //Abrir edtiarCorralController con paso de parámetro
+             App.setRootWithParams("editarCorral", selectedItem);
+         }
     }
 
     @FXML

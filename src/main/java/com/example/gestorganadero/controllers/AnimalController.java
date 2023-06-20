@@ -62,9 +62,11 @@ public class AnimalController extends App implements Initializable {
     @FXML
     private TableColumn<Animal, Integer> colCorral;
 
-
     private AnimalDAO adao;
     private ObservableList<Animal> listaAnimales;
+    private LoginController loginController = new LoginController();
+    private Ganadero currentUser = loginController.getCurrentUser();
+    private Ganaderia currentEntity = loginController.getCurrentEntity();
 
     /**
      * @param url
@@ -77,30 +79,20 @@ public class AnimalController extends App implements Initializable {
         AnimalDAO adao = new AnimalDAO();
         GanaderoDAO gdao = new GanaderoDAO();
         GanaderiaDAO ganaderiadao = new GanaderiaDAO();
-        String ganaderoId = "1";
-        String ganaderiaId = "410600000054";
-
-        // Obtener el ganadero
-        Ganadero ganadero;
-        try {
-            ganadero = gdao.findById(ganaderoId);
-        } catch (SQLException e) {
-            throw new RuntimeException("El ganadero buscado no existe");
-        }
 
         // Obtener la ganaderia
         Ganaderia ganaderia;
         try{
-            ganaderia = ganaderiadao.findById(ganaderiaId);
+            ganaderia = ganaderiadao.findById(currentEntity.getRega());
         } catch (SQLException e){
             throw new RuntimeException("La ganaderia buscada no existe");
         }
 
         // Establecer nombre y usuarios en el label
-        username.setText(ganadero.getNombre() + " " + ganadero.getApellidos());
+        username.setText(currentUser.getNombre() + " " + currentUser.getApellidos());
 
         // Establecer nombre y siglas en el label
-        asociacion.setText(ganaderia.getNombre() + " " + ganaderia.getSiglas());
+        asociacion.setText(currentEntity.getNombre() + " " + currentEntity.getSiglas());
 
         // Crear una ObservableList a partir de la lista de animales
         listaAnimales = FXCollections.observableArrayList();
@@ -110,7 +102,7 @@ public class AnimalController extends App implements Initializable {
         colLactancia.setCellValueFactory(new PropertyValueFactory<>("Lactancia"));
         colVacuna.setCellValueFactory(new PropertyValueFactory<>("Vacuna"));
         colEdad.setCellValueFactory(new PropertyValueFactory<>("Edad"));
-        colNumeroHijos.setCellValueFactory(new PropertyValueFactory<>("NumeroHijos"));
+        colNumeroHijos.setCellValueFactory(new PropertyValueFactory<>("Hijos"));
         colSexo.setCellValueFactory(new PropertyValueFactory<>("Sexo"));
         colCrotalMadre.setCellValueFactory(new PropertyValueFactory<>("CrotalMadre"));
         colCrotalPadre.setCellValueFactory(new PropertyValueFactory<>("CrotalPadre"));
@@ -179,13 +171,13 @@ public class AnimalController extends App implements Initializable {
         Animal selectedItem = tbAnimal.getSelectionModel().getSelectedItem();
 
         //Abrir edtiarCorralController con paso de parámetro
-        App.setRootWithParams("editarCorral", selectedItem);
+        App.setRootWithParams("editarAnimal", selectedItem);
     }
 
     @FXML
     public void deleteAnimal() throws IOException, SQLException {
         Animal selectedItem = tbAnimal.getSelectionModel().getSelectedItem();
         adao.delete(selectedItem);
-        App.setRoot("corral");
+        App.setRoot("animal");
     }
 }

@@ -66,6 +66,7 @@ public class CorralDAO implements DAO<Corral> {
             pst.setString(1, id);
             try(ResultSet res = pst.executeQuery()){
                 if(res.next()) {
+                    result = new Corral();
                     result.setIdCorral(res.getInt("IdCorral"));
                     result.setNombre(res.getString("Nombre"));
                     result.setTipo(res.getString("Tipo"));
@@ -102,6 +103,7 @@ public class CorralDAO implements DAO<Corral> {
                     pst.setString(1, entity.getNombre());
                     pst.setString(2, entity.getTipo());
                     pst.setInt(3, entity.getCenso());
+                    pst.setInt(4, entity.getIdCorral());
                     pst.executeUpdate();
                 }
             }

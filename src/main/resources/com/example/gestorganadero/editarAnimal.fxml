@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/editAnimal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.EditarUsuarioController">
+<AnchorPane id="background" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" stylesheets="@Styles/editAnimal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorganadero.controllers.EditarAnimalController">
    <children>
       <Pane id="Panel" layoutX="720.0" layoutY="71.0" prefHeight="758.0" prefWidth="402.0">
          <children>
@@ -27,7 +28,7 @@
                         <Insets top="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="labelUser" alignment="CENTER" prefHeight="23.0" prefWidth="408.0">
+                  <Label fx:id="labelError" alignment="CENTER" prefHeight="23.0" prefWidth="408.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
@@ -40,7 +41,7 @@
                         <Insets left="53.0" right="52.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Lactancia" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="lactancia" prefHeight="46.0" prefWidth="301.0">
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="11.0" />
                      </VBox.margin>
@@ -59,7 +60,7 @@
                         <Insets left="53.0" right="52.0" top="23.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Edad" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="edad" prefHeight="46.0" prefWidth="301.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
@@ -78,7 +79,7 @@
                         <Insets left="53.0" right="52.0" top="23.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Vacuna" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="vacuna" prefHeight="46.0" prefWidth="301.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
@@ -97,7 +98,7 @@
                         <Insets left="53.0" right="52.0" top="23.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="NumeroHjios" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="numHijos" prefHeight="46.0" prefWidth="301.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
@@ -116,7 +117,7 @@
                         <Insets left="53.0" right="52.0" top="23.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Sexo" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="sexo" prefHeight="46.0" prefWidth="301.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
@@ -135,7 +136,7 @@
                         <Insets left="53.0" right="52.0" top="23.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField id="Formulario" fx:id="Corral" prefHeight="46.0" prefWidth="301.0">
+                  <TextField id="Formulario" fx:id="corral" prefHeight="46.0" prefWidth="301.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
@@ -146,7 +147,7 @@
                         <Insets left="53.0" right="52.0" top="11.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button id="Boton" fx:id="btnSave" alignment="CENTER" mnemonicParsing="false" onAction="#btnLoginValidate" prefHeight="54.0" prefWidth="301.0" text="Guardar cambios" textFill="WHITE">
+                  <Button id="Boton" fx:id="btnSave" alignment="CENTER" mnemonicParsing="false" prefHeight="54.0" prefWidth="301.0" text="Guardar cambios" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="53.0" right="52.0" top="20.0" />
                      </VBox.margin>
@@ -154,13 +155,16 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <Label fx:id="Volver" text="Volver" textFill="#0ac20a">
+                  <Label fx:id="link_volver" onMouseClicked="#linkVolver" text="Volver" textFill="#0ac20a">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="311.0" right="52.0" top="8.0" />
+                        <Insets left="311.0" right="52.0" top="10.0" />
                      </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                </children>
             </VBox>
