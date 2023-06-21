@@ -1,0 +1,26 @@
+
+g	java:S112b"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŒÀñ²1
+h	java:S112ˆ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŒÀñ²1
+h	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŒÀñ²1
+}
+java:S1450I"[Remove the "ganaderiadao" field and declare it as a local variable in the relevant methods.(Ğàúõøÿÿÿÿ8¤Àñ²1
+o
+java:S1450H"SRemove the "gdao" field and declare it as a local variable in the relevant methods.(Êâ*8¤Àñ²1
+{
+java:S1450P"^Remove the "listaGanaderias" field and declare it as a local variable in the relevant methods.(û»™8¤Àñ²1
+
+java:S1450O"]Remove the "listaGanaderos" field and declare it as a local variable in the relevant methods.(ğæ‚™øÿÿÿÿ8¥Àñ²1
+W
+java:S2209L"5Change this instance-reference to a static reference.(æùÿÿÿÿ8§Àñ²1
+P
+java:S1481^".Remove this unused "ganaderia" local variable.(Àñ¹øÿÿÿÿ8¨Àñ²1
+V
+java:S1481›"9Remove this unused "ganaderoSeleccionado" local variable.(éõÁ8­Àñ²1
+]
+java:S1481£":Remove this unused "ganaderiaSeleccionada" local variable.(“–‡úÿÿÿÿ8®Àñ²1
+b
+java:S1128"ERemove this unused import 'com.example.gestorganadero.domain.Corral'.(ñöÜ8¯Àñ²1
+Z
+java:S1128"8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ8¯Àñ²1
+W
+java:S1128"5Remove this unused import 'javafx.scene.layout.Pane'.(êÄƒÄşÿÿÿÿ8¯Àñ²1

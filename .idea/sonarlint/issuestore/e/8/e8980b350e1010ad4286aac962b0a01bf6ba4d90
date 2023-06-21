@@ -1,0 +1,9 @@
+
+u
+java:S1450)"SRemove the "adao" field and declare it as a local variable in the relevant methods.(µëÙüÿÿÿÿ8Îç¤¯1
+
+java:S1130,"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(”…˜ÿÿÿÿÿ8åç¤¯1
+b
+java:S1128"ERemove this unused import 'com.example.gestorganadero.dao.CorralDAO'.(©Ï¼Ÿ8©¤…°1
+J
+java:S1068)"(Remove this unused "adao" private field.(µëÙüÿÿÿÿ8ƒè¤¯1
