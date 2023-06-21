@@ -5,8 +5,6 @@ n
 >src/main/resources/com/example/gestorganadero/Styles/login.css,f\4\f47c4a8bb74660034e81d156490e540e1eb234fc
 h
 8src/main/resources/com/example/gestorganadero/login.fxml,a\9\a941fb30cb042761ad9f79fd7a32de4ce2f47ccb
-b
-2src/main/java/com/example/gestorganadero/Main.java,f\7\f731eaa15689e7e82ea89391c429cdd1a3344549
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 p
@@ -15,12 +13,8 @@ l
 <src/main/java/com/example/gestorganadero/domain/Persona.java,8\9\899ceab14a9c0dd3e24f1da2e6573e5012ad2482
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-x
-Hsrc/main/java/com/example/gestorganadero/connections/ConnectionData.java,2\e\2e81fcf855b3c49a0268a703734098a7251fa782
 <
 conexion.xml,c\e\cea450a916b0aacd653f63795bba766a27f71026
-y
-Isrc/main/java/com/example/gestorganadero/connections/ConnectionMySQL.java,e\0\e03bbaa9763f128a46d9431a33cd576257cd1084
 e
 5src/main/java/com/example/gestorganadero/dao/DAO.java,3\1\31cdecc539fe0476be8aceb9e07c1a4cc1d5776c
 k
@@ -49,8 +43,6 @@ Q.idea/sonarlint/securityhotspotstore/a/1/a171ef0e7173148e037dc01731867895d9083c
 Q.idea/sonarlint/securityhotspotstore/1/1/1195c7c69e65d31861c21d8d7a517d5d54d7ef53,c\8\c8f590e3437cc3a3c3b94faee77ffcdf9fe55fe9
 }
 Msrc/main/java/com/example/gestorganadero/controllers/AddAnimalController.java,e\8\e8980b350e1010ad4286aac962b0a01bf6ba4d90
-z
-Jsrc/main/java/com/example/gestorganadero/controllers/AnimalController.java,b\b\bb23f9b98e0e64c29b661d3c353fb8bd81eb43b4
 
 Qsrc/main/java/com/example/gestorganadero/controllers/EditarUsuarioController.java,0\e\0e69e3b071303621112d8931979095e6d51ee4af
 }
@@ -61,7 +53,7 @@ k
 ;src/main/java/com/example/gestorganadero/domain/Corral.java,8\3\8358fd9de9ca318b8f0e58a2ff2ffe1e38e5d2f4
 k
 ;src/main/java/com/example/gestorganadero/dao/CorralDAO.java,c\1\c1322844d232158b78c8598de3bbd62aca276204
-€
-Psrc/main/java/com/example/gestorganadero/controllers/EditarAnimalController.java,c\2\c2b2db614eec62036ffde5d315cf98444bfa9c29
 u
 Esrc/main/java/com/example/gestorganadero/controllers/IController.java,b\9\b9ab5dd4ca9bf80f9d22bad664189b2ccc23ea5b
+a
+1src/main/java/com/example/gestorganadero/App.java,3\6\3694be0a3ef5337593929cd8a5c7a569d4029620
