@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 /**
  * Clase controlador que extiende App para la vista de edición de usuario
  */
-public class EditarCorralController extends App implements Initializable,IController {
+public class EditarCorralController extends App implements IController {
     @FXML
     private TextField nombre;
     @FXML
@@ -36,9 +36,6 @@ public class EditarCorralController extends App implements Initializable,IContro
     @Override
     public void setParam(Object o) {
         this.corralSeleccionado = (Corral) o;
-    }
-
-    public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
     public void start(){

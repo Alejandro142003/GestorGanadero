@@ -1,0 +1,11 @@
+
+…
+java:S1319"hThe type of "animales" should be an interface such as "List" rather than the implementation "ArrayList".(Œ¯Òõ8Äí¤¯1
+’
+java:S1319O"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(…ûöûÿÿÿÿ8Äí¤¯1
+„
+java:S1319S"hThe type of "animales" should be an interface such as "List" rather than the implementation "ArrayList".(«­–8Äí¤¯1
+C
+java:S1481"&Remove this unused "g" local variable.(« ÈÔ8Óí¤¯1
+C
+java:S1481 "&Remove this unused "a" local variable.(ªà–å8Óí¤¯1

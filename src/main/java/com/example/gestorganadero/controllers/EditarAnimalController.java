@@ -4,16 +4,13 @@ import com.example.gestorganadero.App;
 import com.example.gestorganadero.dao.AnimalDAO;
 import com.example.gestorganadero.domain.Animal;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
-public class EditarAnimalController extends App implements Initializable,IController {
+public class EditarAnimalController extends App implements IController {
     @FXML
     private TextField lactancia;
     @FXML
@@ -44,46 +41,34 @@ public class EditarAnimalController extends App implements Initializable,IContro
 
     @Override
     public void start() {
-
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        //Lógica de inicialización del controlador
         adao = new AnimalDAO();
-        /*String crotal = String.valueOf(animalSeleccionado.getCrotal()); //Buscar forma de obtener el Id
-
-        // Obtener el corral
-        try {
-            animal = adao.findById(crotal);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        if (animalSeleccionado!= null) {
+            lactancia.setText(String.valueOf(animalSeleccionado.getLactancia()));
+            edad.setText(String.valueOf(animalSeleccionado.getEdad()));
+            vacuna.setText(String.valueOf(animalSeleccionado.getVacuna()));
+            numHijos.setText(String.valueOf(animalSeleccionado.getHijos()));
+            sexo.setText(animalSeleccionado.getSexo());
+            //corral.setText(animalSeleccionado.getCorral().toString());
+            //Obtener el animal
+            String idAnimal = String.valueOf(animalSeleccionado.getCrotal());
+            try {
+                animal = adao.findById(idAnimal);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
-
-        //Mostrar los datos del corral
-        lactancia.setText(String.valueOf(animalSeleccionado.getLactancia()));
-        edad.setText(String.valueOf(animalSeleccionado.getEdad()));
-        vacuna.setText(String.valueOf(animalSeleccionado.getVacuna()));
-        numHijos.setText(String.valueOf(animalSeleccionado.getHijos()));
-        sexo.setText(animalSeleccionado.getSexo());
-        corral.setText(String.valueOf(animalSeleccionado.getCorral()));
     }
 
     @FXML
-    private void btnSave() throws IOException {
-        animal.setLactancia(Float.parseFloat(lactancia.getText()));
+    private void btnSave() throws IOException, SQLException {
+        animal.setLactancia(Integer.parseInt(lactancia.getText()));
         animal.setEdad(Integer.parseInt(edad.getText()));
         animal.setVacuna(vacuna.getText());
         animal.setHijos(Integer.parseInt(numHijos.getText()));
         animal.setSexo(sexo.getText());
-        //animal.setCorral(corral.getText());
-
-        try {
-            adao.save(animal);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        App.setRoot("animal");*/
+        //Habria que poner un desplegable con los objetos corrales para asignar uno
+        //animal.setCorral(Corral.valueOf(corral.getText()));
+        App.setRoot("animal");
     }
 
     @FXML

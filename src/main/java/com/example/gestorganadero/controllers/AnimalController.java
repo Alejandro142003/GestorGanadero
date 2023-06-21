@@ -170,8 +170,10 @@ public class AnimalController extends App implements Initializable {
     public void editAnimal() throws IOException {
         Animal selectedItem = tbAnimal.getSelectionModel().getSelectedItem();
 
-        //Abrir edtiarCorralController con paso de parámetro
-        App.setRootWithParams("editarAnimal", selectedItem);
+        if (selectedItem!= null) {
+            //Abrir edtiarCorralController con paso de parámetro
+            App.setRootWithParams("editarAnimal", selectedItem);
+        }
     }
 
     @FXML
